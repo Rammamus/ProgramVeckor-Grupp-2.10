@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class InteractibleRaycast : MonoBehaviour
 {
     RaycastHit hit;
 
@@ -28,7 +28,7 @@ public class NewBehaviourScript : MonoBehaviour
             if (hit.transform.gameObject.CompareTag("Interactable"))
             {
                 interractText.SetActive(true);
-                print("Raycast Hit");
+               
             }
                 
         }
