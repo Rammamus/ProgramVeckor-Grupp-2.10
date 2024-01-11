@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+//This script handles an entire task with it's text UI and numbers - Adrian
 public class TaskHandler : MonoBehaviour
 {
     [SerializeField] GameObject[] locations;
