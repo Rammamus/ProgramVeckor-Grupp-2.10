@@ -38,4 +38,11 @@ public class NewBehaviourScript : MonoBehaviour
         }
         //gör så att den går mot z
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("player"))
+        {
+
+        }
+    }
 }

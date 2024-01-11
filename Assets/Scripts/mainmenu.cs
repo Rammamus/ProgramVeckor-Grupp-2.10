@@ -13,10 +13,8 @@ public class mainmenu : MonoBehaviour
     {
         Application.Quit();
     }
-    public void Replay()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+    
+    
 
 }
 
