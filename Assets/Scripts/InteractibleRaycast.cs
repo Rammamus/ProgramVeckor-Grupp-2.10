@@ -6,8 +6,12 @@ public class InteractibleRaycast : MonoBehaviour
 {
     RaycastHit hit;
 
-    [SerializeField] float raycastRange = 10;
-    [SerializeField] GameObject interractText;  
+    bool holdingSomething = false;
+    [SerializeField] KeyCode interactkey = KeyCode.F;
+    [SerializeField] float raycastRange;
+    [SerializeField] GameObject interractText;
+    Rigidbody childRigidbody;
+        
 
     // Start is called before the first frame update
     void Start()
@@ -24,12 +28,20 @@ public class InteractibleRaycast : MonoBehaviour
         if (Physics.Raycast(transform.position, fwd, out hit, raycastRange))
         {
 
+
             //Kollar om det träffade gameObjectet har taggen Interactable och aktiverar "Press X to interact" texten -Filip
-            if (hit.transform.gameObject.CompareTag("Interactable"))
+            if (hit.transform.gameObject.CompareTag("Interactable") && holdingSomething == false)
             {
                 interractText.SetActive(true);
-               
+                if (Input.GetKey(interactkey))
+                {
+                    hit.transform.parent = gameObject.transform;
+                    childRigidbody = GetComponentInChildren<Rigidbody>();
+                    
+                }
             }
+
+            
                 
         }
         else
