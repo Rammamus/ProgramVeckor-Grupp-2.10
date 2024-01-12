@@ -6,8 +6,9 @@ public class InteractibleRaycast : MonoBehaviour
 {
     public RaycastHit hit;
 
-    GameObject equippedItem;
+    Transform equippedItem;
     bool holdingSomething = false;
+    [SerializeField] GameObject testInteract;
     [SerializeField] KeyCode interactkey = KeyCode.F;
     [SerializeField] float raycastRange;
     [SerializeField] GameObject interractText;
@@ -36,8 +37,9 @@ public class InteractibleRaycast : MonoBehaviour
             if (hit.transform.gameObject.CompareTag("Interactable") && holdingSomething == false)
              {
                 interractText.SetActive(true);
-                if (Input.GetKey(interactkey))
+                if (Input.GetKeyDown(interactkey))
                 {
+                    equippedItem = hit.transform;
                     hit.transform.parent = gameObject.transform;
                     holdingSomething = true;
                     
@@ -49,28 +51,34 @@ public class InteractibleRaycast : MonoBehaviour
             if (hit.transform.GetComponent<Tasks>())
             {
                 hit.transform.GetComponent<Tasks>().interaction = true;
+
                 interractText.SetActive(true);
             }
-
-            else if (holdingSomething == true)
+            
+            if (holdingSomething == true)
             {
                 interractText.SetActive(false);
-                if (Input.GetKey(interactkey))
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    
+                    foreach (Transform child in transform)
+                    {
+                        GameObject.Destroy(child.gameObject);
+                    }
+                    Instantiate(testInteract, new Vector3(0, 0, 0), Quaternion.identity);
                     holdingSomething = false;
 
 
                 }
                 
             }
+            
 
 
 
         }
             else
             {
-                interractText.SetActive(false);
+                
             }
 
 
