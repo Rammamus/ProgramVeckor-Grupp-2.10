@@ -14,6 +14,8 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         sentences = new Queue<string>();
+        nameText = FindObjectOfType<TextMeshProUGUI>();
+        DialogueText = FindObjectOfType<TextMeshProUGUI>();
     }
     public void StartDialogue ( Dialogue dialogue)
     {
