@@ -8,6 +8,7 @@ public class NewBehaviourScript : MonoBehaviour
     public float limitz;
     [SerializeField] GameObject test1;
     [SerializeField] Rigidbody rb;
+    public Socialprat dia;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -40,9 +41,9 @@ public class NewBehaviourScript : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-
+            dia.Triggerdialogue();
         }
     }
 }

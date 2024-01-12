@@ -200,8 +200,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 165008097}
+  - component: {fileID: 165008098}
   m_Layer: 0
-  m_Name: Task Holder
+  m_Name: Cleaning Task
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,6 +227,26 @@ Transform:
   - {fileID: 1858758051}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &165008098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165008095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b67cc117f0ad8cf43ada241ee2793fcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locations:
+  - {fileID: 399877663}
+  - {fileID: 644691988}
+  - {fileID: 2137252743}
+  - {fileID: 1858758050}
+  taskText: {fileID: 2130573711}
+  taskName: Clean Spills
+  tasksCompleted: 0
 --- !u!1 &202307775
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,16 +407,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 399877663}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7336082efb1c2b34cb255f7c5b721231, type: 3}
+  m_Script: {fileID: 11500000, guid: 49b031a5c6106cf4cae0b4d6c511763e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locations:
-  - {fileID: 399877663}
-  - {fileID: 644691988}
-  - {fileID: 2137252743}
-  - {fileID: 1858758050}
-  taskText: {fileID: 2130573711}
-  taskName: Clean Spills
+  th: {fileID: 165008098}
+  me: {fileID: 399877663}
 --- !u!1 &644691988
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +424,7 @@ GameObject:
   - component: {fileID: 644691993}
   - component: {fileID: 644691992}
   - component: {fileID: 644691991}
-  - component: {fileID: 644691990}
+  - component: {fileID: 644691994}
   m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: Untagged
@@ -425,31 +441,12 @@ Transform:
   m_GameObject: {fileID: 644691988}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.84, z: 0}
+  m_LocalPosition: {x: 3.87, y: -0.84, z: 0}
   m_LocalScale: {x: 1, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 165008097}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &644691990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 644691988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7336082efb1c2b34cb255f7c5b721231, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  locations:
-  - {fileID: 399877663}
-  - {fileID: 644691988}
-  - {fileID: 2137252743}
-  - {fileID: 1858758050}
-  taskText: {fileID: 2130573711}
-  taskName: Clean Spills
 --- !u!135 &644691991
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -521,6 +518,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 644691988}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &644691994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644691988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49b031a5c6106cf4cae0b4d6c511763e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  th: {fileID: 165008098}
+  me: {fileID: 644691988}
 --- !u!1 &854006888
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,7 +846,7 @@ GameObject:
   - component: {fileID: 1858758055}
   - component: {fileID: 1858758054}
   - component: {fileID: 1858758053}
-  - component: {fileID: 1858758052}
+  - component: {fileID: 1858758056}
   m_Layer: 0
   m_Name: Sphere (3)
   m_TagString: Untagged
@@ -852,31 +863,12 @@ Transform:
   m_GameObject: {fileID: 1858758050}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.84, z: 0}
+  m_LocalPosition: {x: -4.41, y: -0.84, z: 0}
   m_LocalScale: {x: 1, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 165008097}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1858758052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1858758050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7336082efb1c2b34cb255f7c5b721231, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  locations:
-  - {fileID: 399877663}
-  - {fileID: 644691988}
-  - {fileID: 2137252743}
-  - {fileID: 1858758050}
-  taskText: {fileID: 2130573711}
-  taskName: Clean Spills
 --- !u!135 &1858758053
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -948,6 +940,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858758050}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1858758056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858758050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49b031a5c6106cf4cae0b4d6c511763e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  th: {fileID: 165008098}
+  me: {fileID: 1858758050}
 --- !u!1 &2130573710
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,7 +992,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 2fdsafsad
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1013,8 +1019,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1049,7 +1055,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -119.18512, w: -167.50925}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1094,7 +1100,7 @@ GameObject:
   - component: {fileID: 2137252748}
   - component: {fileID: 2137252747}
   - component: {fileID: 2137252746}
-  - component: {fileID: 2137252745}
+  - component: {fileID: 2137252749}
   m_Layer: 0
   m_Name: Sphere (2)
   m_TagString: Untagged
@@ -1111,31 +1117,12 @@ Transform:
   m_GameObject: {fileID: 2137252743}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.84, z: 0}
+  m_LocalPosition: {x: 0, y: -0.84, z: 3.96}
   m_LocalScale: {x: 1, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 165008097}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2137252745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137252743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7336082efb1c2b34cb255f7c5b721231, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  locations:
-  - {fileID: 399877663}
-  - {fileID: 644691988}
-  - {fileID: 2137252743}
-  - {fileID: 1858758050}
-  taskText: {fileID: 2130573711}
-  taskName: Clean Spills
 --- !u!135 &2137252746
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1207,6 +1194,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137252743}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2137252749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137252743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49b031a5c6106cf4cae0b4d6c511763e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  th: {fileID: 165008098}
+  me: {fileID: 2137252743}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
