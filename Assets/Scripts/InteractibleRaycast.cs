@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class InteractibleRaycast : MonoBehaviour
 {
-    RaycastHit hit;
+    public RaycastHit hit;
 
     bool holdingSomething = false;
     [SerializeField] KeyCode interactkey = KeyCode.F;
     [SerializeField] float raycastRange;
     [SerializeField] GameObject interractText;
-    Rigidbody childRigidbody;
+    
         
 
     // Start is called before the first frame update
@@ -36,18 +36,19 @@ public class InteractibleRaycast : MonoBehaviour
                 if (Input.GetKey(interactkey))
                 {
                     hit.transform.parent = gameObject.transform;
-                    childRigidbody = GetComponentInChildren<Rigidbody>();
+                    
                     
                 }
             }
+            else
+            {
+                interractText.SetActive(false);
+            }
 
-            
-                
+
+
         }
-        else
-        {
-            interractText.SetActive(false);
-        }
+        
             
     }
     
