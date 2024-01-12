@@ -45,6 +45,13 @@ public class InteractibleRaycast : MonoBehaviour
 
             }
 
+            //Kollar om det träffade gameObjectet är en task - Adrian
+            if (hit.transform.GetComponent<Tasks>())
+            {
+                hit.transform.GetComponent<Tasks>().interaction = true;
+                interractText.SetActive(true);
+            }
+
             else if (holdingSomething == true)
             {
                 interractText.SetActive(false);
