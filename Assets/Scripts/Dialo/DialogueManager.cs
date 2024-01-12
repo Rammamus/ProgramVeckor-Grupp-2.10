@@ -14,13 +14,13 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         sentences = new Queue<string>();
-        nameText = FindObjectOfType<TextMeshProUGUI>();
-        DialogueText = FindObjectOfType<TextMeshProUGUI>();
+        //nameText = FindObjectOfType<TextMeshProUGUI>();
+        //DialogueText = FindObjectOfType<TextMeshProUGUI>();
     }
     public void StartDialogue ( Dialogue dialogue)
     {
         panel.SetActive(true);
-        //Debug.Log("Startar konversation med " + dialogue.name);
+        Debug.Log("Startar konversation med " + dialogue.name);
         nameText.text = dialogue.name;
         inconversation = true; 
         sentences.Clear();

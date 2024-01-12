@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Pathsbeh : MonoBehaviour
 {
     public float limitx; 
     public float limitz;
@@ -44,6 +44,7 @@ public class NewBehaviourScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             dia.Triggerdialogue();
+            Debug.Log("Lala");
         }
     }
 }
