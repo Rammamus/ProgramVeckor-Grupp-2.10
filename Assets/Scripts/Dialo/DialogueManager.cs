@@ -13,9 +13,7 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
     public void StartDIalogue ( Dialogue dialogue)
-    {
-        Debug.Log("Startar konversation med " + dialogue.name);
-
+    {   
         nameText.text = dialogue.name;
 
         sentences.Clear();
