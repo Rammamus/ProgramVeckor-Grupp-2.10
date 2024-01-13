@@ -285,6 +285,7 @@ GameObject:
   - component: {fileID: 7259806200600785330}
   - component: {fileID: 5854343922666816309}
   - component: {fileID: 7852056371885422396}
+  - component: {fileID: 9090396915967650423}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -472,6 +473,19 @@ MonoBehaviour:
   gainingSanity: 0
   profile: {fileID: 11400000, guid: 05b855a33abd53849b6841f18515e6d6, type: 2}
   vignette: {fileID: 0}
+--- !u!114 &9090396915967650423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5653467620220835832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71e3bb9768882394297f2326349e7279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dia: {fileID: 0}
 --- !u!1 &7308740035165181669
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,6 +781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f0ea47d9b3c6145b2bf97fec2cebbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testInteract: {fileID: 0}
   interactkey: 102
   raycastRange: 6
   interractText: {fileID: 2017587923520836498}
@@ -861,6 +876,10 @@ PrefabInstance:
     - target: {fileID: 2595537372561665937, guid: 8297605b8dd9c7a49ad0db576b149feb, type: 3}
       propertyPath: m_Name
       value: Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595537372561665937, guid: 8297605b8dd9c7a49ad0db576b149feb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

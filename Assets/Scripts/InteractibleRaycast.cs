@@ -46,7 +46,15 @@ public class InteractibleRaycast : MonoBehaviour
                 }
 
             }
-
+            //Kollar om det träffade gameObjectet har prat scriptet - Erwin
+            if (hit.transform.GetComponent<Socialprat>())
+            {
+                interractText.SetActive(true);
+                if (Input.GetKeyDown(interactkey))
+                {
+                    hit.transform.GetComponent<Socialprat>().Triggerdialogue();
+                }
+            }
             //Kollar om det träffade gameObjectet är en task - Adrian
             if (hit.transform.GetComponent<Tasks>())
             {
