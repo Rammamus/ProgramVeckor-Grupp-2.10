@@ -783,7 +783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   testInteract: {fileID: 0}
   interactkey: 102
-  raycastRange: 6
+  raycastRange: 2
   interractText: {fileID: 2017587923520836498}
 --- !u!1001 &3347829834688265083
 PrefabInstance:
