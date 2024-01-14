@@ -24,15 +24,12 @@ public class InteractibleRaycast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(holdingSomething);
         //Sätter Vektorn fwd till framåt från kameran -Filip
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
 
         //Känner efter om Raycasten träffar någonting raycastRange units framför objektet och överför informationen från det träffade objektet till raycastHit-variabeln hit - Filip
         if (Physics.Raycast(transform.position, fwd, out hit, raycastRange))
         {
-
-            print("Interact");
             //Kollar om det träffade gameObjectet har taggen Interactable och aktiverar "Press F to interact" texten -Filip
             if (hit.transform.gameObject.CompareTag("Interactable") && holdingSomething == false)
              {

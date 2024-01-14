@@ -23,7 +23,8 @@ public class TaskHandler : MonoBehaviour
     {
         print("bomba"); // this happens
         taskText.text = "- " + taskName + ": " + tasksCompleted + "/" + locations.Length.ToString();
-        taskList.list[place] = taskText;
+        taskList.list[place].text = taskText.text;
+        taskList.UpdateText();
         if (tasksCompleted == locations.Length)
         {
             taskText.fontStyle = FontStyles.Strikethrough;

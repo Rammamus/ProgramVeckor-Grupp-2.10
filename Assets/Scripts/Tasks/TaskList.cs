@@ -10,6 +10,7 @@ public class TaskList : MonoBehaviour
 
     public void UpdateText()
     {
-        text.text = string.Join("\n", list.ToString());
+        //text.text = string.Join("\n", list.ToString());
+        text.text = list[0].ToString() + list[1].ToString();
     }
 }
