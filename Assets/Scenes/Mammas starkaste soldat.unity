@@ -1239,7 +1239,7 @@ MonoBehaviour:
   taskText: {fileID: 933876029}
   taskList: {fileID: 1027305090}
   taskName: Pick up trash
-  place: 0
+  place: 1
   tasksCompleted: 0
 --- !u!1 &1225021708
 GameObject:

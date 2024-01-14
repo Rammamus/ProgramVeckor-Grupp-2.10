@@ -83,7 +83,7 @@ public class InteractibleRaycast : MonoBehaviour
         }
             else
             {
-                
+                interractText.SetActive(false);
             }
 
 
