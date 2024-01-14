@@ -8,18 +8,22 @@ public class TaskHandler : MonoBehaviour
 {
     [SerializeField] GameObject[] locations;
     [SerializeField] TextMeshProUGUI taskText;
+    [SerializeField] TaskList taskList;
     [SerializeField] string taskName;
+    [SerializeField] int place;
     public int tasksCompleted;
-    // Start is called before the first frame update
+
     void Start()
     {
         tasksCompleted = 0;
+        UpdateText();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateText()
     {
+        print("bomba"); // this happens
         taskText.text = "- " + taskName + ": " + tasksCompleted + "/" + locations.Length.ToString();
+        taskList.list[place] = taskText;
         if (tasksCompleted == locations.Length)
         {
             taskText.fontStyle = FontStyles.Strikethrough;
