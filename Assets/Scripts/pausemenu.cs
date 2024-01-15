@@ -23,7 +23,7 @@ public class pausemenu : MonoBehaviour
     }
     public void meinmenu()
     {
-        SceneManager.LoadSceneAsync(0);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
 
