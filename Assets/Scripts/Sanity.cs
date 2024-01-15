@@ -15,7 +15,7 @@ public class Sanity : MonoBehaviour
     //post processing variables - Adrian
     public PostProcessProfile profile;
     public Vignette vignette;
-    float insanePercentage;
+    public float insanePercentage;
 
     void Start()
     {

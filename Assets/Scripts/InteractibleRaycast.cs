@@ -12,6 +12,7 @@ public class InteractibleRaycast : MonoBehaviour
     [SerializeField] KeyCode interactkey = KeyCode.F;
     [SerializeField] float raycastRange;
     [SerializeField] GameObject interractText;
+    [SerializeField] public Sanity sanity;
     
         
 
@@ -49,9 +50,19 @@ public class InteractibleRaycast : MonoBehaviour
                 interractText.SetActive(true);
                 if (Input.GetKeyDown(interactkey))
                 {
-                    hit.transform.GetComponent<Socialprat>().Triggerdialogue();
+                    //Om spelarens sanity droppar under 25% så kommer man kunna ta bort objektet istället för att prata med det. - Erwin
+                    if (hit.transform.gameObject.CompareTag("Prey") && sanity.insanePercentage >= 0.75)
+                    {
+                        hit.transform.GetComponent<Killcount>().killcount += 1;
+                        Destroy(hit.transform.gameObject);
+                    }
+                    else
+                    {
+                        hit.transform.GetComponent<Socialprat>().Triggerdialogue();
+                    }
                 }
             }
+            
             //Kollar om det träffade gameObjectet är en task - Adrian
             if (hit.transform.GetComponent<Tasks>())
             {
