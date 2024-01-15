@@ -571,6 +571,18 @@ PrefabInstance:
       propertyPath: testInteract
       value: 
       objectReference: {fileID: 1141986141}
+    - target: {fileID: 5622643749286095178, guid: af7a448308d0f974b930443bc08b40bd, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4eb42087486f1474f81ca865daadd9b6, type: 2}
+    - target: {fileID: 5622643749286095178, guid: af7a448308d0f974b930443bc08b40bd, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8046280957367873271, guid: 4eb42087486f1474f81ca865daadd9b6, type: 2}
+    - target: {fileID: 5622643749286095178, guid: af7a448308d0f974b930443bc08b40bd, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5653467620220835832, guid: af7a448308d0f974b930443bc08b40bd, type: 3}
       propertyPath: m_Name
       value: Player
@@ -696,6 +708,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1058402077488543639, guid: 2211d559cf7807c439e82b00c264546f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c1a914f3eeb3b7c4698fa57372df7e40, type: 2}
     - target: {fileID: 5426110948223500982, guid: 2211d559cf7807c439e82b00c264546f, type: 3}
       propertyPath: m_Name
       value: testInteractable

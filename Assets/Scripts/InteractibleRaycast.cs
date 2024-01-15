@@ -8,7 +8,6 @@ public class InteractibleRaycast : MonoBehaviour
 
     Transform equippedItem;
     bool holdingSomething = false;
-    [SerializeField] GameObject testInteract;
     [SerializeField] KeyCode interactkey = KeyCode.F;
     [SerializeField] float raycastRange;
     [SerializeField] GameObject interractText;
@@ -41,8 +40,15 @@ public class InteractibleRaycast : MonoBehaviour
                     holdingSomething = true;
                     
                 }
+            }
+
+            else
+            {
+                interractText.SetActive(false);
 
             }
+
+
             //Kollar om det träffade gameObjectet har prat scriptet - Erwin
             if (hit.transform.GetComponent<Socialprat>())
             {
@@ -60,31 +66,26 @@ public class InteractibleRaycast : MonoBehaviour
                 interractText.SetActive(true);
             }
             
-            if (holdingSomething == true)
-            {
-                interractText.SetActive(false);
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    foreach (Transform child in transform)
-                    {
-                        GameObject.Destroy(child.gameObject);
-                    }
-                    Instantiate(testInteract, new Vector3(0, 0, 0), Quaternion.identity);
-                    holdingSomething = false;
 
-
-                }
-                
-            }
             
 
 
 
         }
-            else
+
+        //Släpper objektet man håller i handen om man trycker på Y
+        if (holdingSomething == true)
+        {
+
+            interractText.SetActive(false);
+            if (Input.GetKeyDown(KeyCode.Y))
             {
                 interractText.SetActive(false);
+                gameObject.transform.DetachChildren();
+                holdingSomething = false;
+                
             }
+        }
 
 
 
