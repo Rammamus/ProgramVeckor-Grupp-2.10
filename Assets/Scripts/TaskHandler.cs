@@ -8,22 +8,26 @@ public class TaskHandler : MonoBehaviour
 {
     [SerializeField] GameObject[] locations;
     [SerializeField] TextMeshProUGUI taskText;
+    [SerializeField] TaskList taskList;
     [SerializeField] string taskName;
+    [SerializeField] int place;
     public int tasksCompleted;
-    // Start is called before the first frame update
+
     void Start()
     {
         tasksCompleted = 0;
+        UpdateTask();
     }
 
-    // Update is called once per frame
-    void Update()
+    //A function for updating this specific task's list text - Adrian
+    public void UpdateTask()
     {
         taskText.text = "- " + taskName + ": " + tasksCompleted + "/" + locations.Length.ToString();
+        taskList.list[place].text = taskText.text;
+        taskList.UpdateTaskBig(); //Updates the final tasklist that is the one seen on screen - Adrian
         if (tasksCompleted == locations.Length)
         {
-            taskText.fontStyle = FontStyles.Strikethrough;
-            taskText.color = Color.gray;
+            taskList.completed++;
         }
     }
 }

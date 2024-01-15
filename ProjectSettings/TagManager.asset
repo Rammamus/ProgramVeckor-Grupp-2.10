@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactable
   - PlayerCamera
+  - Talkable
   layers:
   - Default
   - TransparentFX
