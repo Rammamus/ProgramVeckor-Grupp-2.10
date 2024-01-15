@@ -23,7 +23,7 @@ public class SaveData
         interact = KeyBinds.interact;
     }
 
-    public SaveData(SceneManager scenemanager)
+    public SaveData(SceneManage scenemanager)
     {
         scene = scenemanager.scene;
     }

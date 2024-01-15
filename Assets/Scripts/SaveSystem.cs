@@ -18,7 +18,7 @@ public static class SaveSystem
         stream.Close();
     }
 
-    public static void SaveScene(SceneManager sceneM)
+    public static void SaveScene(KeyBinds sceneM)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/scene.boom"; //Creates the path where the file will be saved - Adrian
