@@ -16,19 +16,18 @@ public class TaskHandler : MonoBehaviour
     void Start()
     {
         tasksCompleted = 0;
-        UpdateText();
+        UpdateTask();
     }
 
-    public void UpdateText()
+    //A function for updating this specific task's list text - Adrian
+    public void UpdateTask()
     {
-        print("bomba"); // this happens
         taskText.text = "- " + taskName + ": " + tasksCompleted + "/" + locations.Length.ToString();
         taskList.list[place].text = taskText.text;
-        taskList.UpdateText();
+        taskList.UpdateTaskBig(); //Updates the final tasklist that is the one seen on screen - Adrian
         if (tasksCompleted == locations.Length)
         {
-            taskText.fontStyle = FontStyles.Strikethrough;
-            taskText.color = Color.gray;
+            taskList.completed++;
         }
     }
 }

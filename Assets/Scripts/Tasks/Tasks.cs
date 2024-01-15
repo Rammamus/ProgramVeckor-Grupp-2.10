@@ -38,7 +38,7 @@ public class Tasks : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
         taskHandler.tasksCompleted++;
-        taskHandler.UpdateText();
+        taskHandler.UpdateTask();
         interaction = false;
     }
 }
