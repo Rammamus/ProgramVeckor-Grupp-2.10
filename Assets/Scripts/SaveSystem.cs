@@ -28,6 +28,7 @@ public static class SaveSystem
 
         SaveData data = new SaveData(sceneM);
 
+        Debug.Log("Scene data saved in " + path);
         formatter.Serialize(stream, data); //Writes the data - Adrian
         stream.Close();
     }
@@ -43,7 +44,7 @@ public static class SaveSystem
 
             SaveData data = formatter.Deserialize(stream) as SaveData;
             stream.Close();
-            Debug.Log("Keybind data loaded in " + path);
+            Debug.Log("Keybind data loaded from " + path);
             return data;
         }
         else
@@ -63,6 +64,7 @@ public static class SaveSystem
 
             SaveData data = formatter.Deserialize(stream) as SaveData;
             stream.Close();
+            Debug.Log("Scene data loaded from " + path);
             return data;
         }
         else
