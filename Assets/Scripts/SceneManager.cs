@@ -11,6 +11,6 @@ public class SceneManage : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         scene = SceneManager.GetActiveScene().buildIndex;
-        //aveSystem.SaveScene(this);
+        SaveSystem.SaveScene(this);
     }
 }

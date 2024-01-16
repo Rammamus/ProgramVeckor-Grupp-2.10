@@ -11,7 +11,7 @@ public class SaveData
     public KeyCode moveLeft;
     public KeyCode moveRight;
     public KeyCode moveForward;
-    public KeyCode moveBack;
+    public KeyCode moveBackward;
     public KeyCode interact;
 
     public SaveData(KeyBinds keybinds)
@@ -19,7 +19,7 @@ public class SaveData
         moveLeft = KeyBinds.moveLeft;
         moveRight = KeyBinds.moveRight;
         moveForward = KeyBinds.moveForward;
-        moveBack = KeyBinds.moveBack;
+        moveBackward = KeyBinds.moveBackward;
         interact = KeyBinds.interact;
     }
 

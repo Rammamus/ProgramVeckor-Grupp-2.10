@@ -14,11 +14,13 @@ public static class SaveSystem
 
         SaveData data = new SaveData(keybinds);
 
+        Debug.Log("Keybind data saved in " + path);
         formatter.Serialize(stream, data); //Writes the data - Adrian
         stream.Close();
     }
 
-    public static void SaveScene(KeyBinds sceneM)
+    //Function for saving the level you are in - Adrian
+    public static void SaveScene(SceneManage sceneM)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/scene.boom"; //Creates the path where the file will be saved - Adrian
@@ -31,7 +33,7 @@ public static class SaveSystem
     }
 
     //Loads the saved keybinds - Adrian
-    public static SaveData loadBinds()
+    public static SaveData LoadBinds()
     {
         string path = Application.persistentDataPath + "/keybinds.boom";
         if (File.Exists(path))
@@ -41,6 +43,7 @@ public static class SaveSystem
 
             SaveData data = formatter.Deserialize(stream) as SaveData;
             stream.Close();
+            Debug.Log("Keybind data loaded in " + path);
             return data;
         }
         else
