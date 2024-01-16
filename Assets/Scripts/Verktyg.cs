@@ -25,7 +25,10 @@ public class Verktyg : Interactables
         {
             rb.useGravity = false;
             rb.constraints = RigidbodyConstraints.FreezePosition;
+            rb.constraints = RigidbodyConstraints.FreezeRotation;
             coll.enabled = false;
+            gameObject.transform.localPosition = new Vector3(0.2f,-0.1f,1);
+            transform.localRotation = Quaternion.identity;
         }
         
         else
