@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     public bool inconversation = false;
     public GameObject panel;
+    public GameObject spelare; 
     void Start()
     {
         //Man skapar en array som håller sig till FIFO regeln
@@ -52,6 +53,7 @@ public class DialogueManager : MonoBehaviour
     //stänger av panelen när konversationen är över.
     void EndDialogue()
     {
+        spelare.GetComponent<PlayerCam>().enabled = true;
         Debug.Log("Slut på konversationen.");
         panel.SetActive(false);
         Time.timeScale = 1f;

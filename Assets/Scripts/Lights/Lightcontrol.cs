@@ -19,6 +19,12 @@ public class NewBehaviourScript : MonoBehaviour
             StartCoroutine(flickeringlight());
 
         }
+        if (sanity.insanePercentage >= 0.8)
+        {
+            this.gameObject.GetComponent<Light>().enabled = false;
+            flicker = true;
+
+        }
         
     }
     IEnumerator flickeringlight()

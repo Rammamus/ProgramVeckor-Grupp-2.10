@@ -8,6 +8,8 @@ public class Socialprat : MonoBehaviour
 
     public void Triggerdialogue()
     {
+       
+        
         FindAnyObjectByType<DialogueManager>().StartDialogue(dialogue);
     }
 }

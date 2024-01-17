@@ -11,6 +11,9 @@ public class Pathsbeh : MonoBehaviour
     [SerializeField] GameObject test1;
     [SerializeField] Rigidbody rb;
     public Socialprat dia;
+    public GameObject prata;
+    public Camera mainCamera;
+    public GameObject spelare;
     void Start()
     {
         rb = GetComponent<Rigidbody>();

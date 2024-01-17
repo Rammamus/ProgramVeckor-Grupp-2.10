@@ -5,13 +5,24 @@ using UnityEngine;
 public class Playerdial : MonoBehaviour
 {
     public DialogueManager dia;
-
-    // Update is called once per frame
+    public Camera mainCamera;
+    public GameObject spelare;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && dia.inconversation)
         {
             dia.DisplayNextScentence();
+        }
+
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        //om objectet collidar med spelaren så startas dialågen. -Erwin
+        if (collision.gameObject.CompareTag("Prey"))
+        {
+            spelare.GetComponent<PlayerCam>().enabled = false;
+            mainCamera.transform.LookAt(collision.transform.position);
+            Debug.Log("Lala");
         }
     }
 }
