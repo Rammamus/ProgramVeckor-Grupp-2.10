@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '''F'' to interact'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4eb42087486f1474f81ca865daadd9b6, type: 2}
+  m_sharedMaterial: {fileID: 8046280957367873271, guid: 4eb42087486f1474f81ca865daadd9b6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -473,6 +473,7 @@ MonoBehaviour:
   gainingSanity: 0
   profile: {fileID: 11400000, guid: 05b855a33abd53849b6841f18515e6d6, type: 2}
   vignette: {fileID: 0}
+  insanePercentage: 0
 --- !u!114 &9090396915967650423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -781,10 +782,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f0ea47d9b3c6145b2bf97fec2cebbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testInteract: {fileID: 0}
   interactkey: 102
   raycastRange: 2
   interractText: {fileID: 2017587923520836498}
+  sanity: {fileID: 0}
 --- !u!1001 &3347829834688265083
 PrefabInstance:
   m_ObjectHideFlags: 0
