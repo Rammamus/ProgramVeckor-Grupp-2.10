@@ -13,6 +13,7 @@ public class SaveData
     public KeyCode moveForward;
     public KeyCode moveBackward;
     public KeyCode interact;
+    public KeyCode converse;
 
     public SaveData(KeyBinds keybinds)
     {
@@ -21,6 +22,7 @@ public class SaveData
         moveForward = KeyBinds.moveForward;
         moveBackward = KeyBinds.moveBackward;
         interact = KeyBinds.interact;
+        converse = KeyBinds.converse;
     }
 
     public SaveData(SceneManage scenemanager)

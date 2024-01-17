@@ -24,10 +24,10 @@ public class TaskHandler : MonoBehaviour
     {
         taskText.text = "- " + taskName + ": " + tasksCompleted + "/" + locations.Length.ToString();
         taskList.list[place].text = taskText.text;
-        taskList.UpdateTaskBig(); //Updates the final tasklist that is the one seen on screen - Adrian
         if (tasksCompleted == locations.Length)
         {
             taskList.completed++;
         }
+        taskList.UpdateTaskBig(); //Updates the final tasklist that is the one seen on screen - Adrian
     }
 }

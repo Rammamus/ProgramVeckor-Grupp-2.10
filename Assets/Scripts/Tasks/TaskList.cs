@@ -10,21 +10,19 @@ public class TaskList : MonoBehaviour
     public TextMeshProUGUI[] list;
     string[] listString;
     public int completed;
-    bool passedTheLevel;
+    public bool passedTheLevel;
     [SerializeField] TextMeshProUGUI text;
     
     //A function to update the progression of the tasklist - Adrian
     public void UpdateTaskBig()
     {
         listString = list.Select(TextMeshPro => TextMeshPro.text).ToArray(); //From TMPro array to string array - Adrian
-        text.text = string.Join("\n", listString); //Makes the text on screen into the string array, hopping down a line for each new elemnt in the array - Adrian
-    }
-
-    public void EndOfDay()
-    {
+        text.text = string.Join("\n", listString); //Makes the text on screen into the string array, hopping down a line for each new element in the array - Adrian
         if (completed == list.Length)
         {
             passedTheLevel = true;
+            Debug.Log("passed");
         }
+        Debug.Log("UpdateTaskBig   " + completed + "/" + list.Length);
     }
 }

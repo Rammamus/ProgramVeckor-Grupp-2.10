@@ -8,7 +8,7 @@ public class PickUpTask : Tasks
     public override void DoTask()
     {
         base.DoTask();
-        if (Input.GetKey(KeyCode.E)) //reemmeber - Adrian
+        if (Input.GetKey(KeyBinds.interact)) //reemmeber - Adrian
         {
             taskDone = true;
         }

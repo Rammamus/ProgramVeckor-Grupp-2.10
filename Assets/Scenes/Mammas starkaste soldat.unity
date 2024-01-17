@@ -940,6 +940,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8526091866620600750, guid: da74a14c52eeef240be13ccaeea35385, type: 3}
   m_PrefabInstance: {fileID: 3066083302062242993}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1163077418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1163077420}
+  - component: {fileID: 1163077419}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1163077419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163077418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dae0fbccfbeaa7a4992e0766f197d09f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: 0
+  dayLength: 600
+--- !u!4 &1163077420
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163077418}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -23.29881, y: -11.11964, z: -3.132559}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1225021708
 GameObject:
   m_ObjectHideFlags: 0
@@ -1228,6 +1274,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpTrash Task
       objectReference: {fileID: 0}
+    - target: {fileID: 3507923432355628244, guid: da74a14c52eeef240be13ccaeea35385, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.65
+      objectReference: {fileID: 0}
     - target: {fileID: 5596589801648920153, guid: da74a14c52eeef240be13ccaeea35385, type: 3}
       propertyPath: taskList
       value: 
@@ -1372,6 +1422,7 @@ SceneRoots:
   - {fileID: 202307777}
   - {fileID: 984557339}
   - {fileID: 116727013}
+  - {fileID: 1163077420}
   - {fileID: 6843785656568590793}
   - {fileID: 112970591}
   - {fileID: 956968644}

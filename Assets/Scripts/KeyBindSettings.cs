@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using TMPro;
 
+//This script changes the keybinds for the player - Adrian
 public class KeyBindSettings : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI[] buttons;
@@ -27,7 +28,7 @@ public class KeyBindSettings : MonoBehaviour
                 if (Input.GetKey(keycode))
                 {
                     buttons[place].text = keycode.ToString();
-                    KeyBinds.keybinds[place] = keycode;
+                    KeyBinds.UpdateBinds(place, keycode);
                 }
             }
         }
