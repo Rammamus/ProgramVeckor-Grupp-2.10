@@ -67,12 +67,22 @@ public class InteractibleRaycast : MonoBehaviour
                 }
             }
             
-            //Kollar om det träffade gameObjectet är en task - Adrian
+            //Kollar om det träffade game objectet är en task - Adrian
             if (hit.transform.GetComponent<Tasks>())
             {
                 hit.transform.GetComponent<Tasks>().interaction = true;
 
                 interractText.SetActive(true);
+            }
+
+            //Kollar om det träffade game objectet är en dörr - Adrian
+            if (hit.transform.GetComponent<DoorScript>())
+            {
+                interractText.SetActive(true);
+                if (Input.GetKeyDown(KeyBinds.interact))
+                {
+                    hit.transform.GetComponent<DoorScript>().DoorToggle();
+                }
             }
         }
         else

@@ -26,6 +26,7 @@ public class SceneManage : MonoBehaviour
         }
     }
 
+    //Ends the day, if you passed the level you go to next scene, if you don't you go back one - Adrian
     public void EndDay()
     {
         if (FindObjectOfType<TaskList>().passedTheLevel)
@@ -39,6 +40,7 @@ public class SceneManage : MonoBehaviour
         }
     }
 
+    //Loads the scene which was last saved - Adrian
     public void LoadSceneData()
     {
         SaveData data = SaveSystem.LoadScene();

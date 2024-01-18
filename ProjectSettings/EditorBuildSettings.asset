@@ -9,9 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/William test.unity
     guid: 5b2ec14a074531244bfd5c05bec048fa
   - enabled: 1
+    path: Assets/Scenes/Philip test pt.2.unity
+    guid: e5adc721429c0a34aa59a6f436ce07c6
+  - enabled: 0
     path: Assets/Scenes/william test pt2.unity
     guid: fb8d28316f12fd8449f69a18ef1a2dce
   - enabled: 0
     path: Assets/Scenes/Philip test.unity
     guid: f510c0d33e7227f48a500416c39a042b
+  - enabled: 1
+    path: Assets/Scenes/Mammas starkaste soldat.unity
+    guid: f12f45988fe8fed4481fdffc55c7a212
   m_configObjects: {}
