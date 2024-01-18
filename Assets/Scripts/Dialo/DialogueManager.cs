@@ -12,7 +12,7 @@ public class DialogueManager : MonoBehaviour
     public bool inconversation = false;
     public GameObject panel;
     public GameObject spelare;
-    public GameObject flicka;
+    public GameObject[] flicka;
     public Animator animator;
     void Start()
     {
@@ -24,10 +24,13 @@ public class DialogueManager : MonoBehaviour
     }
     public void StartDialogue ( Dialogue dialogue)
     {
-        //Sätter en panel aktiv - erwin 
+        //Sätter en panel aktiv och stänger av ett par scripts - erwin 
         animator.SetBool("Isopen", true);
         spelare.GetComponent<PlayerMovement>().enabled = false;
-        flicka.GetComponent<Pathsbeh>().enabled = false;
+        for (int i = 0; i < flicka.Length; i++)
+        {
+            flicka[i].GetComponent<Pathsbeh>().enabled = false;
+        }
         inconversation = true;
         //Time.timeScale = 0f;
         Debug.Log("Startar konversation med " + dialogue.name);
@@ -54,6 +57,7 @@ public class DialogueManager : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
+    //gör så att bokstav efter bokstav blir placerad istället för mening efter mening.
     IEnumerator TypeSentence (string sentence)
     {
         DialogueText.text = "";
@@ -66,9 +70,13 @@ public class DialogueManager : MonoBehaviour
     //stänger av panelen när konversationen är över.
     void EndDialogue()
     {
+       // sätter på ett par koder
         animator.SetBool("Isopen", false);
         spelare.GetComponent<PlayerMovement>().enabled = true;
-        flicka.GetComponent<Pathsbeh>().enabled = true;
+        for (int i = 0; i < flicka.Length; i++)
+        {
+            flicka[i].GetComponent<Pathsbeh>().enabled = true;
+        }
         spelare.GetComponent<PlayerCam>().enabled = true;
         Debug.Log("Slut på konversationen.");
         //Time.timeScale = 1f;
