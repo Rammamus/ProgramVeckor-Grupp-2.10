@@ -11,7 +11,7 @@ public class InteractibleRaycast : MonoBehaviour
     [SerializeField] float raycastRange;
     [SerializeField] GameObject interractText;
     [SerializeField] public Sanity sanity;
-    
+    [SerializeField] public DialogueManager dialogue;
         
 
     // Start is called before the first frame update
@@ -50,7 +50,7 @@ public class InteractibleRaycast : MonoBehaviour
 
 
             //Kollar om det träffade gameObjectet har prat scriptet - Erwin
-            if (hit.transform.GetComponent<Socialprat>())
+            if (hit.transform.GetComponent<Socialprat>() && dialogue.inconversation == false)
             {
                 interractText.SetActive(true);
                 if (Input.GetKeyDown(KeyBinds.interact))

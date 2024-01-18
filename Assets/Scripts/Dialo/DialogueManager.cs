@@ -11,7 +11,9 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     public bool inconversation = false;
     public GameObject panel;
-    public GameObject spelare; 
+    public GameObject spelare;
+    public GameObject flicka;
+    public Animator animator;
     void Start()
     {
         //Man skapar en array som håller sig till FIFO regeln
@@ -23,11 +25,13 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue ( Dialogue dialogue)
     {
         //Sätter en panel aktiv - erwin 
-        panel.SetActive(true);
-        Time.timeScale = 0f;
+        animator.SetBool("Isopen", true);
+        spelare.GetComponent<PlayerMovement>().enabled = false;
+        flicka.GetComponent<Pathsbeh>().enabled = false;
+        inconversation = true;
+        //Time.timeScale = 0f;
         Debug.Log("Startar konversation med " + dialogue.name);
         nameText.text = dialogue.name;
-        inconversation = true; 
         sentences.Clear();
         
         //skapar en foreach som går igenom varje mening
@@ -47,16 +51,27 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         string sentence = sentences.Dequeue();
-        DialogueText.text = sentence;   
-        //Debug.Log(sentence);
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(sentence));
+    }
+    IEnumerator TypeSentence (string sentence)
+    {
+        DialogueText.text = "";
+        foreach (char letter in sentence.ToCharArray())
+        {
+            DialogueText.text += letter;
+            yield return new WaitForSeconds(0.07f);
+        }
     }
     //stänger av panelen när konversationen är över.
     void EndDialogue()
     {
+        animator.SetBool("Isopen", false);
+        spelare.GetComponent<PlayerMovement>().enabled = true;
+        flicka.GetComponent<Pathsbeh>().enabled = true;
         spelare.GetComponent<PlayerCam>().enabled = true;
         Debug.Log("Slut på konversationen.");
-        panel.SetActive(false);
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;
     }
 
 }
