@@ -7,16 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class pausemenu : MonoBehaviour
 {
-    [SerializeField] KeyCode pausemenuKey;
     bool pauseMenuopen = false;
-
-
     public GameObject pausepanel;
-
-
-
-    
-
 
     public void Pause()
     {   
@@ -37,29 +29,19 @@ public class pausemenu : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
-
-
     //Togglar pausmenyn om man trycker ned knappen -Filip
     private void Update()
     {
-        if (Input.GetKeyDown(pausemenuKey) && pauseMenuopen == false)
+        if (Input.GetKeyDown(KeyBinds.pause) && pauseMenuopen == false)
         {
             Pause();
             pauseMenuopen = true;
         }
 
-        
-        else if (Input.GetKeyDown(pausemenuKey) && pauseMenuopen == true)
+        else if (Input.GetKeyDown(KeyBinds.pause) && pauseMenuopen == true)
         {
             Resume();
             pauseMenuopen = false;
         }
-        
-
-
     }
-
-
-
-
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class KeyBinds
 {
     //The array of the keybinds that will later be used - Adrian
-    static public KeyCode[] keybinds = {KeyCode.A, KeyCode.D, KeyCode.W, KeyCode.S, KeyCode.F, KeyCode.Space, KeyCode.Escape};
+    static public KeyCode[] keybinds = {KeyCode.A, KeyCode.D, KeyCode.W, KeyCode.S, KeyCode.F, KeyCode.Space, KeyCode.Escape, KeyCode.Mouse0};
     
     //Default keybinds used in the game - Adrian
     static public KeyCode moveLeft = keybinds[0];
@@ -16,6 +16,7 @@ public class KeyBinds
     static public KeyCode interact = keybinds[4];
     static public KeyCode converse = keybinds[5];
     static public KeyCode pause = keybinds[6];
+    static public KeyCode useItem = keybinds[7];
 
     static public void UpdateBinds(int i, KeyCode key)
     {
@@ -27,6 +28,7 @@ public class KeyBinds
         interact = keybinds[4];
         converse = keybinds[5];
         pause = keybinds[6];
+        useItem = keybinds[7];
     }
 
     //Function for saving the keybinds - Adrian
@@ -39,7 +41,7 @@ public class KeyBinds
     static public void Load()
     {
         SaveData data = SaveSystem.LoadBinds();
-        keybinds = new KeyCode[] { data.moveLeft, data.moveRight, data.moveForward, data.moveBackward, data.interact, data.converse, data.pause };
+        keybinds = new KeyCode[] { data.moveLeft, data.moveRight, data.moveForward, data.moveBackward, data.interact, data.converse, data.pause, data.useItem };
         for (int i = 0; i < keybinds.Length; i++)
         {
             UpdateBinds(i, keybinds[i]);
