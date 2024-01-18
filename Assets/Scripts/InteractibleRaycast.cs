@@ -8,7 +8,6 @@ public class InteractibleRaycast : MonoBehaviour
 
     Transform equippedItem;
     bool holdingSomething = false;
-    [SerializeField] KeyCode interactkey = KeyCode.F;
     [SerializeField] float raycastRange;
     [SerializeField] GameObject interractText;
     [SerializeField] public Sanity sanity;
@@ -34,7 +33,7 @@ public class InteractibleRaycast : MonoBehaviour
             if (hit.transform.gameObject.CompareTag("Interactable") && holdingSomething == false)
              {
                 interractText.SetActive(true);
-                if (Input.GetKeyDown(interactkey))
+                if (Input.GetKeyDown(KeyBinds.interact))
                 {
                     equippedItem = hit.transform;
                     hit.transform.parent = gameObject.transform;
@@ -54,7 +53,7 @@ public class InteractibleRaycast : MonoBehaviour
             if (hit.transform.GetComponent<Socialprat>())
             {
                 interractText.SetActive(true);
-                if (Input.GetKeyDown(interactkey))
+                if (Input.GetKeyDown(KeyBinds.interact))
                 {
                     //Om spelarens sanity droppar under 25% så kommer man kunna ta bort objektet istället för att prata med det. - Erwin
                     if (hit.transform.gameObject.CompareTag("Prey") && sanity.insanePercentage >= 0.75)
