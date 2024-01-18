@@ -14,6 +14,7 @@ public class SaveData
     public KeyCode moveBackward;
     public KeyCode interact;
     public KeyCode converse;
+    public KeyCode pause;
 
     //The keybind data that will be saved - Adrian
     public SaveData(KeyBinds keybinds)
@@ -24,6 +25,7 @@ public class SaveData
         moveBackward = KeyBinds.moveBackward;
         interact = KeyBinds.interact;
         converse = KeyBinds.converse;
+        pause = KeyBinds.pause;
     }
 
     //The scene data that will be saved - Adrian

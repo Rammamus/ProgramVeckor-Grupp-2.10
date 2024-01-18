@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Guess what this script does - Adrian
 public class KeyBinds
 {
     //The array of the keybinds that will later be used - Adrian
-    static public KeyCode[] keybinds = {KeyCode.A, KeyCode.D, KeyCode.W, KeyCode.S, KeyCode.F, KeyCode.Space};
+    static public KeyCode[] keybinds = {KeyCode.A, KeyCode.D, KeyCode.W, KeyCode.S, KeyCode.F, KeyCode.Space, KeyCode.Escape};
     
     //Default keybinds used in the game - Adrian
     static public KeyCode moveLeft = keybinds[0];
@@ -14,6 +15,7 @@ public class KeyBinds
     static public KeyCode moveBackward = keybinds[3];
     static public KeyCode interact = keybinds[4];
     static public KeyCode converse = keybinds[5];
+    static public KeyCode pause = keybinds[6];
 
     static public void UpdateBinds(int i, KeyCode key)
     {
@@ -24,6 +26,7 @@ public class KeyBinds
         moveBackward = keybinds[3];
         interact = keybinds[4];
         converse = keybinds[5];
+        pause = keybinds[6];
     }
 
     //Function for saving the keybinds - Adrian
@@ -36,10 +39,11 @@ public class KeyBinds
     static public void Load()
     {
         SaveData data = SaveSystem.LoadBinds();
-        keybinds = new KeyCode[] { data.moveLeft, data.moveRight, data.moveForward, data.moveBackward, data.interact, data.converse };
+        keybinds = new KeyCode[] { data.moveLeft, data.moveRight, data.moveForward, data.moveBackward, data.interact, data.converse, data.pause };
         for (int i = 0; i < keybinds.Length; i++)
         {
             UpdateBinds(i, keybinds[i]);
+            Debug.Log(keybinds[i].ToString());
         }
     }
 }
