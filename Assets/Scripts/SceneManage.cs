@@ -6,9 +6,8 @@ using UnityEngine.SceneManagement;
 //This script manages the scene/day that you are in - Adrian
 public class SceneManage : MonoBehaviour
 {
-    public int scene; //Variable that will be saved if you quit the game so that you come back to where you left off - Adrian
+    public int scene; //Gets saved so when you load the game later you join the scene you were in before you quit - Adrian
 
-    //Variables for the day timer, minute and hour is simply for aesthetic purposes - Adrian
     [SerializeField] float dayLength;
 
     void Start()
@@ -36,7 +35,14 @@ public class SceneManage : MonoBehaviour
         }
         else
         {
-            Debug.Log("L");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
+    }
+
+    public void LoadSceneData()
+    {
+        SaveData data = SaveSystem.LoadScene();
+        scene = data.scene;
+        SceneManager.LoadScene(scene);
     }
 }

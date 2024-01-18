@@ -15,6 +15,7 @@ public class SaveData
     public KeyCode interact;
     public KeyCode converse;
 
+    //The keybind data that will be saved - Adrian
     public SaveData(KeyBinds keybinds)
     {
         moveLeft = KeyBinds.moveLeft;
@@ -25,6 +26,7 @@ public class SaveData
         converse = KeyBinds.converse;
     }
 
+    //The scene data that will be saved - Adrian
     public SaveData(SceneManage scenemanager)
     {
         scene = scenemanager.scene;
