@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Guess what this script does - Adrian
 public class KeyBinds
 {
     //The array of the keybinds that will later be used - Adrian
