@@ -27,8 +27,8 @@ public class Sanity : MonoBehaviour
     void Update()
     {
         insanity = Mathf.Clamp(insanity, 0, maxInsanity); //restricts the insanity so it can go below 0 or above the max value - Adrian
-        insanePercentage = insanity/maxInsanity;
-        vignette.intensity.value = insanePercentage;
+        insanePercentage = insanity/maxInsanity; //Makes a "percentage" of how insane you are - Adrian
+        vignette.intensity.value = insanePercentage; //Sets the darkness of the postprocessing to the percentage - Adrian
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             ChangeSanity(-10);
@@ -42,7 +42,7 @@ public class Sanity : MonoBehaviour
         }
     }
 
-    //A function for changing sanity by 'x' amount (positive number to gain, negative to lose) - Adrian
+    //A function for changing insanity by 'x' amount (positive number to gain, negative to lose) - Adrian
     public void ChangeSanity(float x)
     {
         insanity += x;
