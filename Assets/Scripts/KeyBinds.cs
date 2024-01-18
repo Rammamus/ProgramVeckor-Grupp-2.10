@@ -45,7 +45,6 @@ public class KeyBinds
         for (int i = 0; i < keybinds.Length; i++)
         {
             UpdateBinds(i, keybinds[i]);
-            Debug.Log(keybinds[i].ToString());
         }
     }
 }
