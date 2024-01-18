@@ -1250,7 +1250,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5318396132485469713, guid: c7f16642014836141b3f905c801406ba, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 29ccdca5b61413742a3cf3cde77eea02, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 99c060a0ccdce2e4c9824fdfca168750, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2257,7 +2257,7 @@ GameObject:
   - component: {fileID: 1710342098}
   - component: {fileID: 1710342097}
   m_Layer: 0
-  m_Name: Audiomanedger
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2870,6 +2870,10 @@ PrefabInstance:
     - target: {fileID: 1639500856650530352, guid: b5d52f11a798bac44aedcb3e32575bc7, type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682791193957278202, guid: b5d52f11a798bac44aedcb3e32575bc7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 2154001884819389228, guid: b5d52f11a798bac44aedcb3e32575bc7, type: 3}
       propertyPath: m_Layer
