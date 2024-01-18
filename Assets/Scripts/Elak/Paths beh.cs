@@ -15,7 +15,7 @@ public class Pathsbeh : MonoBehaviour
     public Camera mainCamera;
     public GameObject spelare;
     public Quaternion origRotation;
-    float activationtimer = 0;
+    public float cooldown = 0f;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -25,6 +25,7 @@ public class Pathsbeh : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+
     {
         //Behövde brute-forca det, kunde inte komma på en lösning. - Erwin
         if (limitx != 0 && test1.transform.position.x < limitx)
@@ -77,14 +78,14 @@ public class Pathsbeh : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //om objectet collidar med spelaren så startas dialågen. -Erwin
-        if (collision.gameObject.CompareTag("Player") && activationtimer <= Time.deltaTime)
+        if (collision.gameObject.CompareTag("Player") && cooldown <= Time.time)
         {
             Quaternion origRotation = transform.rotation;
             transform.LookAt(collision.transform.position);
-            rb.constraints = RigidbodyConstraints.FreezeAll;
+            rb.constraints = RigidbodyConstraints.FreezePosition;
             dia.Triggerdialogue();
             Debug.Log("Lala");
-            activationtimer = Time.deltaTime + 10;
+            cooldown = Time.time + 10f;
 
         }
     }
