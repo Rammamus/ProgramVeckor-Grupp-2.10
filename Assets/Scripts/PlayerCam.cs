@@ -8,7 +8,7 @@ public class PlayerCam : MonoBehaviour
     public float sensitivity;
 
     public Transform orientation;
-    public GameObject camera;
+    public new GameObject camera;
 
     float xRotation;
     float yRotation;

@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class Audiomaneger : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
     [Header("----------AudioSource----------")]
     [SerializeField] AudioSource musicsource;

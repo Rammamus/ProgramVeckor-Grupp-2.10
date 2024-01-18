@@ -16,7 +16,6 @@ public class Flashlight : MonoBehaviour
             flashOff.SetActive(true);
             flashlightOn = false;
         }
-
         else
         {
             flashOn.SetActive(true);
@@ -34,7 +33,7 @@ public class Flashlight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.parent != null && Input.GetKeyDown(KeyCode.Mouse0))
+        if(transform.parent != null && Input.GetKeyDown(KeyBinds.useItem))
         {
             print("Glurp");
             toggleFlashlight();
