@@ -487,6 +487,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dia: {fileID: 0}
+  mainCamera: {fileID: 0}
+  spelare: {fileID: 0}
 --- !u!1 &7308740035165181669
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,6 +537,7 @@ MonoBehaviour:
   DialogueText: {fileID: 0}
   inconversation: 0
   panel: {fileID: 0}
+  spelare: {fileID: 0}
 --- !u!1 &7421197784610205614
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,7 +785,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f0ea47d9b3c6145b2bf97fec2cebbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactkey: 102
   raycastRange: 2
   interractText: {fileID: 2017587923520836498}
   sanity: {fileID: 0}
