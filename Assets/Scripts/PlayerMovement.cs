@@ -58,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
     //Checks the player inputs to move - Adrian
     private void MyInput()
     {
+        //add so that you use the custom keybinds :) - Adrian
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
     }
