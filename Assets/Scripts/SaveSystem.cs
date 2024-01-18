@@ -54,7 +54,7 @@ public static class SaveSystem
         }
     }
 
-    public static SaveData loadScene()
+    public static SaveData LoadScene()
     {
         string path = Application.persistentDataPath + "/scene.boom";
         if (File.Exists(path))

@@ -55,21 +55,48 @@ public class PlayerMovement : MonoBehaviour
         } */
     }
 
-    //Checks the player inputs to move - Adrian
+    //Checks the player's movement inputs - Adrian
     private void MyInput()
     {
-        //add so that you use the custom keybinds :) - Adrian
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
+        //Might be unnecessary but this is just so that if you hold 2 opposing movement keys you won't go in one of the directions - Adrian
+        if (Input.GetKey(KeyBinds.moveLeft) ^ Input.GetKey(KeyBinds.moveRight))
+        {
+            if (Input.GetKey(KeyBinds.moveLeft))
+            {
+                horizontalInput = -1;
+            }
+            if (Input.GetKey(KeyBinds.moveRight))
+            {
+                horizontalInput = 1;
+            }
+        }
+        else
+        {
+            horizontalInput = 0;
+        }
+
+        if (Input.GetKey(KeyBinds.moveForward) ^ Input.GetKey(KeyBinds.moveBackward))
+        {
+            if (Input.GetKey(KeyBinds.moveForward))
+            {
+                verticalInput = 1;
+            }
+            if (Input.GetKey(KeyBinds.moveBackward))
+            {
+                verticalInput = -1;
+            }
+        }
+        else
+        {
+            verticalInput = 0;
+        }
     }
 
-    //Declares the players move direction and adds force in that direction - Adrian
     private void MovePlayer()
     {
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-        rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput; //Declares the players movedirection with the orientation (which way the camera is facing) and the players inputs - Adrian
+        rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force); //Adds force in the previously calculated movedirection - Adrian
     }
-
 
     /* Stamina regen if we use later
     //Starts regenerating stamina after a brief period after either running out or stopping - Adrian
