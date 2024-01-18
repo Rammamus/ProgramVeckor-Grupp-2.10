@@ -20,7 +20,7 @@ public class Verktyg : Interactables
     // Update is called once per frame
     void Update()
     {
-        //Gör att verktyg alltid pekar framåt och är i samma position utifrån spelarens position    
+        //Gör att verktyg alltid pekar framåt och är i samma position utifrån spelarens position  -Filip  
         if(transform.parent != null)
         {
             rb.useGravity = false;

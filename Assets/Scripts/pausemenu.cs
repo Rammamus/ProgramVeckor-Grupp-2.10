@@ -39,6 +39,7 @@ public class pausemenu : MonoBehaviour
 
 
 
+    //Togglar pausmenyn om man trycker ned knappen -Filip
     private void Update()
     {
         if (Input.GetKeyDown(pausemenuKey) && pauseMenuopen == false)

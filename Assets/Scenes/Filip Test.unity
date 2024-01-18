@@ -559,7 +559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7387eef4ebde1494480d9bf1f3c3f855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  remainingPills: 0
+  remainingPills: 10
   pillerSmaskarn: 323
 --- !u!1001 &1522481843
 PrefabInstance:

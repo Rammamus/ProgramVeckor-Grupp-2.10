@@ -7,19 +7,19 @@ public class Piller : MonoBehaviour
     public int remainingPills;
     [SerializeField] KeyCode pillerSmaskarn;
 
+
+    //Minskar piller med ett när man äter ett -Filip
     void takePill()
     {
         remainingPills -= 1;
         print(remainingPills + " Remaining Pills");
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   
 
-    // Update is called once per frame
+
+
+    // Tar ett piller om man klickar på knappen och har piller kvar att ta -Filip
     void Update()
     {
         if (gameObject.transform.parent != null)
