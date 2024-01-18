@@ -15,6 +15,7 @@ public class Pathsbeh : MonoBehaviour
     public Camera mainCamera;
     public GameObject spelare;
     public Quaternion origRotation;
+    float activationtimer = 0;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -76,13 +77,15 @@ public class Pathsbeh : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //om objectet collidar med spelaren så startas dialågen. -Erwin
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && activationtimer <= Time.deltaTime)
         {
             Quaternion origRotation = transform.rotation;
             transform.LookAt(collision.transform.position);
             rb.constraints = RigidbodyConstraints.FreezeAll;
             dia.Triggerdialogue();
             Debug.Log("Lala");
+            activationtimer = Time.deltaTime + 10;
+
         }
     }
 }
