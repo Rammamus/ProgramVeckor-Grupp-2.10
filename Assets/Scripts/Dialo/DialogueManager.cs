@@ -79,6 +79,11 @@ public class DialogueManager : MonoBehaviour
         }
         spelare.GetComponent<PlayerCam>().enabled = true;
         Debug.Log("Slut på konversationen.");
+        for (int i = 0; i < flicka.Length; i++)
+        {
+            flicka[i].GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            flicka[i].GetComponent<Rigidbody>().transform.rotation = flicka[i].GetComponent<Pathsbeh>().origRotation;
+        }
         //Time.timeScale = 1f;
     }
 
