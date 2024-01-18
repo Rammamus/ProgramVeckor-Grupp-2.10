@@ -17,12 +17,12 @@ public class Playerdial : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        //om objectet collidar med spelaren så startas dialågen. -Erwin
+        //om objectet collidar med spelaren så startas dialågen och kameran vänds rakt mot obejektet. -Erwin
         if (collision.gameObject.CompareTag("Prey"))
         {
             spelare.GetComponent<PlayerCam>().enabled = false;
             mainCamera.transform.LookAt(collision.transform.position);
-            Debug.Log("Lala");
+            
         }
     }
 }
