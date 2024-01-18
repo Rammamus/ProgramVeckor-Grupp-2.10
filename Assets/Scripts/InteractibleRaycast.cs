@@ -39,7 +39,6 @@ public class InteractibleRaycast : MonoBehaviour
                     equippedItem = hit.transform;
                     hit.transform.parent = gameObject.transform;
                     holdingSomething = true;
-                    
                 }
             }
 
@@ -48,7 +47,6 @@ public class InteractibleRaycast : MonoBehaviour
                 interractText.SetActive(false);
 
             }
-
 
             //Kollar om det träffade gameObjectet har prat scriptet - Erwin
             if (hit.transform.GetComponent<Socialprat>() && dialogue.inconversation == false)
@@ -76,12 +74,6 @@ public class InteractibleRaycast : MonoBehaviour
 
                 interractText.SetActive(true);
             }
-            
-
-            
-
-
-
         }
         else
         {
@@ -89,25 +81,19 @@ public class InteractibleRaycast : MonoBehaviour
 
         }
 
-        //Släpper objektet man håller i handen om man trycker på Y
+        //Släpper objektet man håller i handen om man trycker på interact knappen
         if (holdingSomething == true)
         {
 
             interractText.SetActive(false);
-            if (Input.GetKeyDown(KeyCode.Y))
+            if (Input.GetKeyDown(KeyBinds.interact))
             {
                 interractText.SetActive(false);
                 gameObject.transform.DetachChildren();
                 holdingSomething = false;
-                
             }
         }
-
-
-
         }
-        
-            
     }
     
 
