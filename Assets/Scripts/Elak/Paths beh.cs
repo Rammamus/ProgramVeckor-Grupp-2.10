@@ -14,10 +14,12 @@ public class Pathsbeh : MonoBehaviour
     public GameObject prata;
     public Camera mainCamera;
     public GameObject spelare;
+    public Quaternion origRotation;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         //få fram rigidbodyn som är npcn - Erwin
+        origRotation = transform.rotation;
     }
 
     // Update is called once per frame
@@ -76,6 +78,9 @@ public class Pathsbeh : MonoBehaviour
         //om objectet collidar med spelaren så startas dialågen. -Erwin
         if (collision.gameObject.CompareTag("Player"))
         {
+            Quaternion origRotation = transform.rotation;
+            transform.LookAt(collision.transform.position);
+            rb.constraints = RigidbodyConstraints.FreezeAll;
             dia.Triggerdialogue();
             Debug.Log("Lala");
         }

@@ -12,7 +12,8 @@ public class InteractibleRaycast : MonoBehaviour
     [SerializeField] GameObject interractText;
     [SerializeField] public Sanity sanity;
     [SerializeField] public DialogueManager dialogue;
-        
+    [SerializeField] public Killcount killcount;
+
 
     // Start is called before the first frame update
     void Start()
@@ -58,7 +59,7 @@ public class InteractibleRaycast : MonoBehaviour
                     //Om spelarens sanity droppar under 25% så kommer man kunna ta bort objektet istället för att prata med det. - Erwin
                     if (hit.transform.gameObject.CompareTag("Prey") && sanity.insanePercentage >= 0.75)
                     {
-                        hit.transform.GetComponent<Killcount>().killcount += 1;
+                        killcount.killcount += 1;
                         Destroy(hit.transform.gameObject);
                     }
                     else
