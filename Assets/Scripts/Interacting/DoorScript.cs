@@ -13,6 +13,10 @@ public class DoorScript : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    private void Update()
+    {
+    }
+
     public void DoorToggle()
     {
         if (doorOpen)
