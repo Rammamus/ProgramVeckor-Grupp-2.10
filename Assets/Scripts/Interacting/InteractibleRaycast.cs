@@ -19,6 +19,7 @@ public class InteractibleRaycast : MonoBehaviour
     void Start()
     {
         interractText.SetActive(false);
+        holdingSomething = false;
     }
 
     // Update is called once per frame

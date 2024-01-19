@@ -1,5 +1,5 @@
+
 using UnityEngine;
-using System;
 
 public class AudioManager : MonoBehaviour
 {
@@ -13,10 +13,5 @@ public class AudioManager : MonoBehaviour
     {
         musicsource.clip = background;
         musicsource.Play();
-    }
-
-    public void PlaySFX(string name)
-    {
-
     }
 }
