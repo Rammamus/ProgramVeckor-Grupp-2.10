@@ -13,7 +13,6 @@ public class pausemenu : MonoBehaviour
 
     public void Pause()
     {
-        Debug.Log("Pause");
         pausepanel.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -21,7 +20,6 @@ public class pausemenu : MonoBehaviour
     }
     public void Resume()
     {
-        Debug.Log("Resume");
         pausepanel.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
