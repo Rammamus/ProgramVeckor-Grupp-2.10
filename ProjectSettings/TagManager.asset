@@ -8,6 +8,7 @@ TagManager:
   - PlayerCamera
   - Talkable
   - Prey
+  - Principal
   layers:
   - Default
   - TransparentFX
