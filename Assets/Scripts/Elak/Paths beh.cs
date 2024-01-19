@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Pathsbeh : MonoBehaviour
 {
-    public float limitx; 
+    /*public float limitx; 
     public float limitz;
     public float limitleft;
-    public float limitback;
+    public float limitback;*/
     [SerializeField] GameObject test1;
     [SerializeField] Rigidbody rb;
     public Socialprat dia;
@@ -16,6 +16,9 @@ public class Pathsbeh : MonoBehaviour
     public GameObject spelare;
     public Quaternion origRotation;
     public float cooldown = 0f;
+    public Transform targetPoint;  
+    public float movementSpeed = 5f;
+    public float stoppingDistance = 0.1f;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -27,65 +30,87 @@ public class Pathsbeh : MonoBehaviour
     void Update()
 
     {
-        //Behövde brute-forca det, kunde inte komma på en lösning. - Erwin
-        if (limitx != 0 && test1.transform.position.x < limitx)
+        if (Vector3.Distance(transform.position, targetPoint.position) > stoppingDistance)
         {
-            rb.AddForce(transform.right * 2);
-            rb.constraints = RigidbodyConstraints.FreezeRotationX;
+            rb.constraints = RigidbodyConstraints.FreezePositionZ;
+            MoveTowardsTarget();
         }
-        //gör så att den går mot +x kordinaten -Erwin
-        if (limitx > 0 && test1.transform.position.x > limitx)
+        else
         {
-            Destroy(this.gameObject);
-            Debug.Log("As");
+            Disappear();
         }
-        //gör så att den gå sönder om det som står händer -Erwin
-        if (limitz > 0 && test1.transform.position.z > limitz)
-        {
-            Destroy(this.gameObject);
-        }
-        //gör så att den gå sönder om det som står händer -Erwin
-        if (limitz != 0 && test1.transform.position.z < limitz)
-        {
-            rb.AddForce(transform.forward * 2);
-            rb.constraints = RigidbodyConstraints.FreezeRotationZ;
-        }
-        //gör så att den går mot +z kordinaten -Erwin
-        if (limitleft != 0 && test1.transform.position.x > limitleft)
-        {
-            rb.AddForce(Vector3.left * 2);
-            rb.constraints = RigidbodyConstraints.FreezeRotationX;
-        }
-        //gör så att den går mot -x kordinaten -Erwin
-        if (limitleft < 0 && test1.transform.position.x < limitleft)
-        {
-            Destroy(this.gameObject);
-            Debug.Log("As");
-        }
-        //gör så att den gå sönder om det som står händer -Erwin
-        if (limitback < 0 && test1.transform.position.z < limitback)
-        {
-            Destroy(this.gameObject);
-        }
-        //gör så att den gå sönder om det som står händer -Erwin
-        if (limitback != 0 && test1.transform.position.z > limitback)
-        {
-            rb.AddForce(Vector3.back * 2);
-            rb.constraints = RigidbodyConstraints.FreezeRotationZ;
-        }
-        //gör så att den går mot -z kordinaten -Erwin
+        /* //Behövde brute-forca det, kunde inte komma på en lösning. - Erwin
+         if (limitx != 0 && test1.transform.position.x < limitx)
+         {
+             rb.AddForce(transform.right * 2);
+             rb.constraints = RigidbodyConstraints.FreezeRotationX;
+         }
+         //gör så att den går mot +x kordinaten -Erwin
+         if (limitx > 0 && test1.transform.position.x > limitx)
+         {
+             Destroy(this.gameObject);
+
+         }
+         //gör så att den gå sönder om det som står händer -Erwin
+         if (limitz > 0 && test1.transform.position.z > limitz)
+         {
+             Destroy(this.gameObject);
+         }
+         //gör så att den gå sönder om det som står händer -Erwin
+         if (limitz != 0 && test1.transform.position.z < limitz)
+         {
+             rb.AddForce(transform.forward * 2);
+             rb.constraints = RigidbodyConstraints.FreezeRotationZ;
+         }
+         //gör så att den går mot +z kordinaten -Erwin
+         if (limitleft != 0 && test1.transform.position.x > limitleft)
+         {
+             rb.AddForce(Vector3.left * 2);
+             rb.constraints = RigidbodyConstraints.FreezeRotationX;
+         }
+         //gör så att den går mot -x kordinaten -Erwin
+         if (limitleft < 0 && test1.transform.position.x < limitleft)
+         {
+             Destroy(this.gameObject);
+         }
+         //gör så att den gå sönder om det som står händer -Erwin
+         if (limitback < 0 && test1.transform.position.z < limitback)
+         {
+             Destroy(this.gameObject);
+         }
+         //gör så att den gå sönder om det som står händer -Erwin
+         if (limitback != 0 && test1.transform.position.z > limitback)
+         {
+             rb.AddForce(Vector3.back * 2);
+             rb.constraints = RigidbodyConstraints.FreezeRotationZ;
+         }
+         //gör så att den går mot -z kordinaten -Erwin*/
+
     }
-    private void OnCollisionEnter(Collision collision)
+    void MoveTowardsTarget()
+    {
+        
+        Vector3 direction = (targetPoint.position - transform.position).normalized;
+
+        
+        transform.Translate(direction * movementSpeed * Time.deltaTime, Space.World);
+    }
+    void Disappear()
+    {
+        Destroy(gameObject);
+    }
+ 
+    private void OnTriggerEnter(Collider other)
     {
         //om objectet collidar med spelaren så startas dialågen. -Erwin
-        if (collision.gameObject.CompareTag("Player") && cooldown <= Time.time)
+        if (other.gameObject.CompareTag("Player") && cooldown <= Time.time)
         {
             Quaternion origRotation = transform.rotation;
-            transform.LookAt(collision.transform.position);
+            transform.LookAt(other.transform.position);
             rb.constraints = RigidbodyConstraints.FreezePosition;
             dia.Triggerdialogue();
-            Debug.Log("Lala");
             cooldown = Time.time + 10f;
+            print("bla");
 
         }
     }
