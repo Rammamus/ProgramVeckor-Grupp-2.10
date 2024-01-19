@@ -6,6 +6,10 @@ using UnityEngine.Rendering.PostProcessing;
 //This script handles the variables and functions for the players sanity - Adrian
 public class Sanity : MonoBehaviour
 {
+
+    [SerializeField] AudioSource galenMusik;
+    [SerializeField] GameObject audioManager;
+
     //All the necessary variables for sanity - Adrian
     public float insanity;
     public float maxInsanity;
@@ -19,17 +23,20 @@ public class Sanity : MonoBehaviour
 
     void Start()
     {
+
         profile.TryGetSettings(out vignette);
         insanity = 0;
         vignette.intensity.value = 0;
     }
 
-    void Update()
+    public void Update()
     {
+        
         insanity = Mathf.Clamp(insanity, 0, maxInsanity); //restricts the insanity so it can go below 0 or above the max value - Adrian
         insanePercentage = insanity/maxInsanity; //Makes a "percentage" of how insane you are - Adrian
         if (insanePercentage > 0.2)
         {
+            
             vignette.intensity.value = 0.2f;
         }
         else
@@ -37,6 +44,12 @@ public class Sanity : MonoBehaviour
             vignette.intensity.value = insanePercentage;
         }
         insanity += Time.deltaTime;
+
+        if (insanePercentage >= 0.5)
+        {
+            print("testc");
+            audioManager.GetComponent<AudioManager>().playMusic();
+        }
     }
 
     //A function for changing insanity by 'x' amount (positive number to gain, negative to lose) - Adrian
