@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Prefabs/Scenes/School Day 2.unity
     guid: 375e2ccdf4337a644915398d3984eaea
+  - enabled: 1
+    path: Assets/Prefabs/Scenes/LastScene.unity
+    guid: 7c3a86875406498428d0b2046d8ee431
   m_configObjects: {}
