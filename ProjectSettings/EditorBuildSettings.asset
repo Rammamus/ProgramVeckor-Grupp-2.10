@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Prefabs/Scenes/Philip test pt.2.unity
     guid: e5adc721429c0a34aa59a6f436ce07c6
   - enabled: 1
-    path: Assets/Scenes/Home Day 2.unity
-    guid: 49cc9ff7737ccbe4b881ff8eb28f7ba5
+    path: Assets/Prefabs/Scenes/Home Day 2.unity
+    guid: afbe3dd1db1dc3a4da25fc6f87fbf670
+  - enabled: 1
+    path: Assets/Prefabs/Scenes/School Day 2.unity
+    guid: 375e2ccdf4337a644915398d3984eaea
   m_configObjects: {}
