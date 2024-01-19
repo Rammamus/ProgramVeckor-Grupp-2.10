@@ -31,7 +31,6 @@ public class Sanity : MonoBehaviour
 
     public void Update()
     {
-        
         insanity = Mathf.Clamp(insanity, 0, maxInsanity); //restricts the insanity so it can go below 0 or above the max value - Adrian
         insanePercentage = insanity/maxInsanity; //Makes a "percentage" of how insane you are - Adrian
         if (insanePercentage > 0.2)
@@ -43,7 +42,7 @@ public class Sanity : MonoBehaviour
         {
             vignette.intensity.value = insanePercentage;
         }
-        insanity += Time.deltaTime;
+        insanity += Time.deltaTime * 3;
 
         if (insanePercentage >= 0.5)
         {
