@@ -32,7 +32,8 @@ public class SceneManage : MonoBehaviour
     }
     IEnumerator Spawnobject()
     {
-        while (dayLength > 0)
+        int i = 0;
+        while (dayLength > 0 && i < 1000 )
         {
             GameObject[] Spawnobject = Bytaarray ? soldater : skolpojkar;
             foreach (GameObject obj in skolpojkar)
@@ -40,6 +41,7 @@ public class SceneManage : MonoBehaviour
                 obj.SetActive(true);
                 yield return new WaitForSeconds(20);
             }
+            i++;
         }
         if (sanity.insanePercentage > 0.8)
         {
