@@ -65,6 +65,11 @@ public class SceneManage : MonoBehaviour
         }
     }
 
+    public void GoToWork()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     //Loads the scene which was last saved - Adrian
     public void LoadSceneData()
     {
