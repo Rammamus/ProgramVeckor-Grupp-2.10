@@ -28,7 +28,14 @@ public class Sanity : MonoBehaviour
     {
         insanity = Mathf.Clamp(insanity, 0, maxInsanity); //restricts the insanity so it can go below 0 or above the max value - Adrian
         insanePercentage = insanity/maxInsanity; //Makes a "percentage" of how insane you are - Adrian
-        vignette.intensity.value = insanePercentage; //Sets the darkness of the postprocessing to the percentage - Adrian
+        if (insanePercentage > 0.2)
+        {
+            vignette.intensity.value = 0.2f;
+        }
+        else
+        {
+            vignette.intensity.value = insanePercentage;
+        }
         insanity += Time.deltaTime;
     }
 

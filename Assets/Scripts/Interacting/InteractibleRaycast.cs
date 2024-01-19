@@ -19,6 +19,7 @@ public class InteractibleRaycast : MonoBehaviour
     void Start()
     {
         interractText.SetActive(false);
+        holdingSomething = false;
     }
 
     // Update is called once per frame
@@ -34,7 +35,7 @@ public class InteractibleRaycast : MonoBehaviour
             if (hit.transform.gameObject.CompareTag("Interactable") && holdingSomething == false)
              {
                 interractText.SetActive(true);
-                if (Input.GetKeyDown(KeyBinds.interact))
+                if (Input.GetKeyUp(KeyBinds.interact))
                 {
                     equippedItem = hit.transform;
                     hit.transform.parent = gameObject.transform;
