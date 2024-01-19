@@ -88,7 +88,6 @@ public class InteractibleRaycast : MonoBehaviour
         else
         {
             interractText.SetActive(false);
-
         }
 
         //Släpper objektet man håller i handen om man trycker på interact knappen

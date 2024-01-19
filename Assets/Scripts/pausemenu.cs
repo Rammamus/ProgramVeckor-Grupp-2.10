@@ -9,16 +9,24 @@ public class pausemenu : MonoBehaviour
 {
     bool pauseMenuopen = false;
     public GameObject pausepanel;
+    [SerializeField] KeyBindSettings keybindsettings;
 
     public void Pause()
-    {   
+    {
+        Debug.Log("Pause");
         pausepanel.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         Time.timeScale = 0;
     }
     public void Resume()
     {
+        Debug.Log("Resume");
         pausepanel.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         Time.timeScale = 1;
+        keybindsettings.SaveAndBack();
     }
     public void quitgame()
     {
@@ -26,7 +34,11 @@ public class pausemenu : MonoBehaviour
     }
     public void Mainmenu()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        SceneManager.LoadScene(0);
+    }
+
+    private void Start()
+    {
     }
 
     //Togglar pausmenyn om man trycker ned knappen -Filip
