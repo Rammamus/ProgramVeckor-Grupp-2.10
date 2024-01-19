@@ -15,14 +15,16 @@ public class DoorScript : MonoBehaviour
 
     private void Update()
     {
+
     }
 
     public void DoorToggle()
     {
+        print(transform.position);
         if (doorOpen)
         {
             doorOpen = false;
-            animator.SetTrigger("Close");
+            animator.Play("OpenDoor");
             Debug.Log("This door got closed!");
         }
         else

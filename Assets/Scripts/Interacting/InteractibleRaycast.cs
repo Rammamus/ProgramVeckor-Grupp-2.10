@@ -65,6 +65,12 @@ public class InteractibleRaycast : MonoBehaviour
                     {
                         hit.transform.GetComponent<Socialprat>().Triggerdialogue();
                     }
+
+                    //If you talk to the principal while having completed all tasks you fully pass - Adrian
+                    if (hit.transform.gameObject.CompareTag("Principal") && FindObjectOfType<TaskList>().passedTheLevel)
+                    {
+                        FindObjectOfType<SceneManage>().fullyPassed = true;
+                    }
                 }
             }
             
