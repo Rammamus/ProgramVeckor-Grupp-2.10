@@ -13,11 +13,13 @@ public class DoorScript : MonoBehaviour
         {
             //close animation
             doorOpen = false;
+            Debug.Log("This door got closed!");
         }
         else
         {
             //open animation
             doorOpen = true;
+            Debug.Log("This door got opened!");
         }
     }
 }
