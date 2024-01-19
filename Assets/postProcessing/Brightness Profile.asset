@@ -27,19 +27,8 @@ MonoBehaviour:
     value: 0
   keyValue:
     overrideState: 1
-<<<<<<< Updated upstream:Assets/postProcessing/Brightness Profile.asset
     value: 1.37
   eyeAdaptation:
-=======
-    value: 0.00853731
-  smoothness:
-    overrideState: 1
-    value: 1
-  roundness:
-    overrideState: 0
-    value: 1
-  rounded:
->>>>>>> Stashed changes:Assets/PostProcessing/SanityProfile.asset
     overrideState: 0
     value: 0
   speedUp:
