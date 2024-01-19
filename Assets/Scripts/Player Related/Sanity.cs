@@ -29,17 +29,7 @@ public class Sanity : MonoBehaviour
         insanity = Mathf.Clamp(insanity, 0, maxInsanity); //restricts the insanity so it can go below 0 or above the max value - Adrian
         insanePercentage = insanity/maxInsanity; //Makes a "percentage" of how insane you are - Adrian
         vignette.intensity.value = insanePercentage; //Sets the darkness of the postprocessing to the percentage - Adrian
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            ChangeSanity(-10);
-            print("go down       " + insanePercentage + "       " + insanity);
-
-        }
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            ChangeSanity(10);
-            print("go up       " + insanePercentage + "       " + insanity);
-        }
+        insanity += Time.deltaTime;
     }
 
     //A function for changing insanity by 'x' amount (positive number to gain, negative to lose) - Adrian

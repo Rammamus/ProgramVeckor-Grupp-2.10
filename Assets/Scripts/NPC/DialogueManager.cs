@@ -29,7 +29,7 @@ public class DialogueManager : MonoBehaviour
         spelare.GetComponent<PlayerMovement>().enabled = false;
         for (int i = 0; i < flicka.Length; i++)
         {
-            flicka[i].GetComponent<Pathsbeh>().enabled = false;
+            flicka[i].GetComponent<PathsBehavior>().enabled = false;
         }
         inconversation = true;
         //Time.timeScale = 0f;
@@ -75,7 +75,7 @@ public class DialogueManager : MonoBehaviour
         spelare.GetComponent<PlayerMovement>().enabled = true;
         for (int i = 0; i < flicka.Length; i++)
         {
-            flicka[i].GetComponent<Pathsbeh>().enabled = true;
+            flicka[i].GetComponent<PathsBehavior>().enabled = true;
         }
         spelare.GetComponent<PlayerCam>().enabled = true;
         Debug.Log("Slut på konversationen.");
@@ -84,7 +84,7 @@ public class DialogueManager : MonoBehaviour
             flicka[i].GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             flicka[i].GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ;
             flicka[i].GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-            flicka[i].GetComponent<Rigidbody>().transform.rotation = flicka[i].GetComponent<Pathsbeh>().origRotation;
+            flicka[i].GetComponent<Rigidbody>().transform.rotation = flicka[i].GetComponent<PathsBehavior>().origRotation;
         }
         //Time.timeScale = 1f;
     }
