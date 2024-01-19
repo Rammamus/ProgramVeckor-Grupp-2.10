@@ -25,6 +25,7 @@ public class Playerdial : MonoBehaviour
             //stänger av spelar-kamera kåden
             spelare.GetComponent<PlayerCam>().enabled = false;
             mainCamera.transform.LookAt(other.transform.position);
+            //skapar en cooldown på hur många gånger man kan prata med saken i rad
             cooldown = Time.time + 10f;
         }
     }
