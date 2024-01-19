@@ -11,7 +11,6 @@ public class Pathsbeh : MonoBehaviour
     [SerializeField] GameObject test1;
     [SerializeField] Rigidbody rb;
     public Socialprat dia;
-    public GameObject prata;
     public Camera mainCamera;
     public GameObject spelare;
     public Quaternion origRotation;
