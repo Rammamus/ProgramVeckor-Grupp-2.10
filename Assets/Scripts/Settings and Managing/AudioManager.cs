@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public Sanity sanity;
     [Header("----------AudioSource----------")]
     [SerializeField] AudioSource musicsource;
     [SerializeField] AudioSource SFXsource;
@@ -28,6 +29,27 @@ public class AudioManager : MonoBehaviour
     public AudioClip uhmacuttlygrubbel2;
 
     private void Start()
+    {
+       
+    }
+
+    public void Update()
+    {
+        if(sanity.insanePercentage >= 0.5 && !musicsource.isPlaying)
+        {
+            
+            musicsource.Play();
+        } else if (sanity.insanePercentage < 0.5f)
+        {
+            musicsource.Stop();
+        }
+            
+
+        
+    }
+    
+
+    public void playMusic()
     {
         musicsource.clip = background;
         musicsource.Play();
