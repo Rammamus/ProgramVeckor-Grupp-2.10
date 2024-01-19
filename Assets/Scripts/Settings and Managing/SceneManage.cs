@@ -13,6 +13,7 @@ public class SceneManage : MonoBehaviour
     public GameObject[] soldater;
     private bool Bytaarray = false;
     public Sanity sanity;
+    public bool fullyPassed;
 
     void Start()
     {
@@ -56,7 +57,7 @@ public class SceneManage : MonoBehaviour
     //Ends the day, if you passed the level you go to next scene, if you don't you go back one - Adrian
     public void EndDay()
     {
-        if (FindObjectOfType<TaskList>().passedTheLevel)
+        if (fullyPassed)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             SaveSystem.SaveScene(this);

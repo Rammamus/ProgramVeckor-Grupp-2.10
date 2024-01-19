@@ -6,19 +6,31 @@ using UnityEngine;
 public class DoorScript : MonoBehaviour
 {
     bool doorOpen;
+    Animator animator;
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+
+    }
 
     public void DoorToggle()
     {
+        print(transform.position);
         if (doorOpen)
         {
-            //close animation
             doorOpen = false;
+            animator.Play("OpenDoor");
             Debug.Log("This door got closed!");
         }
         else
         {
-            //open animation
             doorOpen = true;
+            animator.SetTrigger("Open");
             Debug.Log("This door got opened!");
         }
     }
