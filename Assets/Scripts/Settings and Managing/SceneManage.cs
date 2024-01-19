@@ -9,11 +9,16 @@ public class SceneManage : MonoBehaviour
     public int scene; //Gets saved so when you load the game later you join the scene you were in before you quit - Adrian
 
     [SerializeField] float dayLength;
+    public GameObject[] skolpojkar;
+    public GameObject[] soldater;
+    private bool Bytaarray = false;
+    public Sanity sanity;
 
     void Start()
     {
         scene = SceneManager.GetActiveScene().buildIndex;
         SaveSystem.SaveScene(this);
+        StartCoroutine(Spawnobject());
     }
 
     private void Update()
@@ -23,6 +28,26 @@ public class SceneManage : MonoBehaviour
         if (dayLength <= 0)
         {
             EndDay();
+        }
+    }
+    IEnumerator Spawnobject()
+    {
+        while (dayLength > 0)
+        {
+            GameObject[] Spawnobject = Bytaarray ? soldater : skolpojkar;
+            foreach (GameObject obj in skolpojkar)
+            {
+                obj.SetActive(true);
+                yield return new WaitForSeconds(20);
+            }
+        }
+        if (sanity.insanePercentage > 0.8)
+        {
+            Bytaarray = !Bytaarray;
+        }
+        if (sanity.insanePercentage < 0.8)
+        {
+            Bytaarray = true;
         }
     }
 

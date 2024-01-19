@@ -11,7 +11,7 @@ public class Killcount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (sanity.insanePercentage >= 0.75)
+       /* if (sanity.insanePercentage >= 0.75)
         {
             for (int i = 0; i < Soldater.Length; i++)
             {
@@ -32,6 +32,6 @@ public class Killcount : MonoBehaviour
             {
                 barn[i].SetActive(true);
             }
-        }
+        }*/
     }
 }

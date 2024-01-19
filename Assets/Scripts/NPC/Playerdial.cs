@@ -22,6 +22,7 @@ public class Playerdial : MonoBehaviour
         //om objectet collidar med spelaren så startas dialågen och kameran vänds rakt mot obejektet. -Erwin
         if (other.gameObject.CompareTag("Prey") && cooldown <= Time.time)
         {
+            //stänger av spelar-kamera kåden
             spelare.GetComponent<PlayerCam>().enabled = false;
             mainCamera.transform.LookAt(other.transform.position);
             cooldown = Time.time + 10f;
