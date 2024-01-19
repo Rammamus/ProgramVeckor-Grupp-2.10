@@ -288,6 +288,7 @@ GameObject:
   - component: {fileID: 5854343922666816309}
   - component: {fileID: 7852056371885422396}
   - component: {fileID: 9090396915967650423}
+  - component: {fileID: 3093733406762039657}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -488,9 +489,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e3bb9768882394297f2326349e7279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dia: {fileID: 0}
-  mainCamera: {fileID: 0}
-  spelare: {fileID: 0}
+  dia: {fileID: 587766558815703052}
+  mainCamera: {fileID: 5378112629988101294}
+  spelare: {fileID: 5653467620220835832}
+--- !u!114 &3093733406762039657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5653467620220835832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa562e9a4a9f9f43a971e64885a351f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  killcount: 0
+  Soldater: []
+  barn: []
+  sanity: {fileID: 7852056371885422396}
 --- !u!1 &7308740035165181669
 GameObject:
   m_ObjectHideFlags: 0

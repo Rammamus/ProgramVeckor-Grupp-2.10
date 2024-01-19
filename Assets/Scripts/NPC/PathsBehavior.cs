@@ -97,7 +97,8 @@ public class PathsBehavior : MonoBehaviour
     }
     void Disappear()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        this.gameObject.SetActive(false);
     }
  
     private void OnTriggerEnter(Collider other)
@@ -110,7 +111,6 @@ public class PathsBehavior : MonoBehaviour
             rb.constraints = RigidbodyConstraints.FreezePosition;
             dia.Triggerdialogue();
             cooldown = Time.time + 10f;
-            print("bla");
 
         }
     }
