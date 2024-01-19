@@ -26,6 +26,7 @@ public class DialogueManager : MonoBehaviour
     {
         //Sätter en panel aktiv och stänger av ett par scripts - erwin 
         animator.SetBool("Isopen", true);
+        spelare.GetComponent<PlayerCam>().enabled = false;
         spelare.GetComponent<PlayerMovement>().enabled = false;
         for (int i = 0; i < flicka.Length; i++)
         {
