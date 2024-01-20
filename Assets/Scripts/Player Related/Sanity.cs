@@ -23,26 +23,24 @@ public class Sanity : MonoBehaviour
 
     void Start()
     {
-
         profile.TryGetSettings(out vignette);
-        insanity = 0;
-        vignette.intensity.value = 0;
+        insanity = 1;
     }
 
     public void Update()
     {
         insanity = Mathf.Clamp(insanity, 0, maxInsanity); //restricts the insanity so it can go below 0 or above the max value - Adrian
         insanePercentage = insanity/maxInsanity; //Makes a "percentage" of how insane you are - Adrian
-        if (insanePercentage > 0.2)
+        if (insanePercentage > 0.5)
         {
             
-            vignette.intensity.value = 0.2f;
+            vignette.intensity.value = 0.5f;
         }
         else
         {
             vignette.intensity.value = insanePercentage;
         }
-        insanity += Time.deltaTime * 3;
+        ChangeSanity(Time.deltaTime * 10);
 
         if (insanePercentage >= 0.5)
         {

@@ -11,7 +11,7 @@ public class SceneManage : MonoBehaviour
     [SerializeField] float dayLength;
     public GameObject[] skolpojkar;
     public GameObject[] soldater;
-    private bool Bytaarray = false;
+    private bool bytaArray = false;
     public Sanity sanity;
     public bool fullyPassed;
 
@@ -36,7 +36,7 @@ public class SceneManage : MonoBehaviour
         int i = 0;
         while (dayLength > 0 && i < 1000 )
         {
-            GameObject[] Spawnobject = Bytaarray ? soldater : skolpojkar;
+            GameObject[] Spawnobject = bytaArray ? soldater : skolpojkar;
             foreach (GameObject obj in skolpojkar)
             {
                 obj.SetActive(true);
@@ -46,11 +46,11 @@ public class SceneManage : MonoBehaviour
         }
         if (sanity.insanePercentage > 0.8)
         {
-            Bytaarray = !Bytaarray;
+            bytaArray = !bytaArray;
         }
         if (sanity.insanePercentage < 0.8)
         {
-            Bytaarray = true;
+            bytaArray = true;
         }
     }
 
