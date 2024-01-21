@@ -39,7 +39,6 @@ public class Flashlight : MonoBehaviour
     {
         if(transform.parent != null && Input.GetKeyDown(KeyBinds.useItem))
         {
-            print("Glurp");
             toggleFlashlight();
         }
     }

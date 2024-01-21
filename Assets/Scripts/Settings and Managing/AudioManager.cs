@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     [Header("----------AudioSource----------")]
     public AudioClip background;
     public AudioClip knapptryck;
+    public AudioClip ficklampa;
     public AudioClip anndasstarkt;
     public AudioClip anndasstraktlight;
     public AudioClip hummfixljud;

@@ -10,7 +10,14 @@ public class pausemenu : MonoBehaviour
     bool pauseMenuopen = false;
     public GameObject pausepanel;
     [SerializeField] KeyBindSettings keybindsettings;
+    [SerializeField] AudioSource source; 
+    [SerializeField] AudioClip sfx;
 
+    public void ButtonSFX()
+    {
+        source.clip = sfx;
+        source.Play();
+    }
     public void Pause()
     {
         pausepanel.SetActive(true);
@@ -33,10 +40,6 @@ public class pausemenu : MonoBehaviour
     public void Mainmenu()
     {
         SceneManager.LoadScene(0);
-    }
-
-    private void Start()
-    {
     }
 
     //Togglar pausmenyn om man trycker ned knappen -Filip

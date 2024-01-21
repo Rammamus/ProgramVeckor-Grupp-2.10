@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class InteractibleRaycast : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class InteractibleRaycast : MonoBehaviour
     bool holdingSomething = false;
     [SerializeField] float raycastRange;
     [SerializeField] GameObject interractText;
+    TextMeshProUGUI uiText;
     [SerializeField] public Sanity sanity;
     [SerializeField] public DialogueManager dialogue;
     [SerializeField] public Killcount killcount;
@@ -19,6 +21,7 @@ public class InteractibleRaycast : MonoBehaviour
     void Start()
     {
         interractText.SetActive(false);
+        uiText = interractText.GetComponent<TextMeshProUGUI>();
         holdingSomething = false;
     }
 
@@ -35,6 +38,7 @@ public class InteractibleRaycast : MonoBehaviour
             if (hit.transform.gameObject.CompareTag("Interactable") && holdingSomething == false)
              {
                 interractText.SetActive(true);
+                UpdateInteractText("to pick up");
                 if (Input.GetKeyUp(KeyBinds.interact))
                 {
                     equippedItem = hit.transform;
@@ -53,6 +57,7 @@ public class InteractibleRaycast : MonoBehaviour
             if (hit.transform.GetComponent<Socialprat>() && dialogue.inconversation == false)
             {
                 interractText.SetActive(true);
+                UpdateInteractText("to talk");
                 if (Input.GetKeyDown(KeyBinds.interact))
                 {
                     //Om spelarens sanity droppar under 25% så kommer man kunna ta bort objektet istället för att prata med det. - Erwin
@@ -86,6 +91,7 @@ public class InteractibleRaycast : MonoBehaviour
             if (hit.transform.GetComponent<DoorScript>())
             {
                 interractText.SetActive(true);
+                UpdateInteractText("to use door");
                 if (Input.GetKeyDown(KeyBinds.interact))
                 {
                     hit.transform.GetComponent<DoorScript>().DoorToggle();
@@ -100,7 +106,6 @@ public class InteractibleRaycast : MonoBehaviour
         //Släpper objektet man håller i handen om man trycker på interact knappen
         if (holdingSomething == true)
         {
-
             interractText.SetActive(false);
             if (Input.GetKeyDown(KeyBinds.interact))
             {
@@ -110,6 +115,11 @@ public class InteractibleRaycast : MonoBehaviour
             }
         }
         }
+
+    public void UpdateInteractText(string s)
+    {
+        uiText.text = "'" + KeyBinds.interact.ToString() + "' " + s;
     }
+}
     
 
