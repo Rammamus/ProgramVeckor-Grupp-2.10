@@ -48,12 +48,6 @@ public class InteractibleRaycast : MonoBehaviour
                 }
             }
 
-            else
-            {
-                interractText.SetActive(false);
-
-            }
-
             //Kollar om det träffade gameObjectet har prat scriptet - Erwin
             if (hit.transform.GetComponent<Socialprat>() && dialogue.inconversation == false)
             {
