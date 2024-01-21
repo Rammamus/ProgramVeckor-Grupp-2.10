@@ -16,6 +16,7 @@ public class InteractibleRaycast : MonoBehaviour
     [SerializeField] public DialogueManager dialogue;
     [SerializeField] public Killcount killcount;
 
+    Tasks previousTask;
 
     // Start is called before the first frame update
     void Start()
@@ -83,7 +84,7 @@ public class InteractibleRaycast : MonoBehaviour
             if (hit.transform.GetComponent<Tasks>())
             {
                 hit.transform.GetComponent<Tasks>().interaction = true;
-
+                previousTask = hit.transform.GetComponent<Tasks>();
                 interractText.SetActive(true);
             }
 
@@ -101,6 +102,10 @@ public class InteractibleRaycast : MonoBehaviour
         else
         {
             interractText.SetActive(false);
+            if (previousTask != null)
+            {
+                previousTask.StopTask();
+            }
         }
 
         //Släpper objektet man håller i handen om man trycker på interact knappen
@@ -114,7 +119,7 @@ public class InteractibleRaycast : MonoBehaviour
                 holdingSomething = false;
             }
         }
-        }
+    }
 
     public void UpdateInteractText(string s)
     {
