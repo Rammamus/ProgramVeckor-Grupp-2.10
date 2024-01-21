@@ -36,7 +36,7 @@ public class InteractibleRaycast : MonoBehaviour
         if (Physics.Raycast(transform.position, fwd, out hit, raycastRange))
         {
             //Kollar om det träffade gameObjectet har taggen Interactable och aktiverar "Press F to interact" texten -Filip
-            if (hit.transform.gameObject.CompareTag("Interactable") && holdingSomething == false)
+            if (hit.transform.gameObject.CompareTag("Interactable") && !holdingSomething)
              {
                 interractText.SetActive(true);
                 UpdateInteractText("to pick up");
