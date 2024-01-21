@@ -8,6 +8,8 @@ public class SceneManage : MonoBehaviour
 {
     public int scene; //Gets saved so when you load the game later you join the scene you were in before you quit - Adrian
 
+    public bool isSchoolScene;
+
     [SerializeField] float dayLength;
     public GameObject[] skolpojkar;
     public GameObject[] soldater;
@@ -24,11 +26,14 @@ public class SceneManage : MonoBehaviour
 
     private void Update()
     {
-        //Simple countdown for the day - Adrian
-        dayLength -= Time.deltaTime;
-        if (dayLength <= 0)
+        //Simple countdown for the day if it's a school scene - Adrian
+        if (isSchoolScene)
         {
-            EndDay();
+            dayLength -= Time.deltaTime;
+            if (dayLength <= 0)
+            {
+                EndDay();
+            }
         }
     }
     IEnumerator Spawnobject()

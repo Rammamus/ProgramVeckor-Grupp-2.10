@@ -24,6 +24,7 @@ public class pausemenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Time.timeScale = 0;
+        pauseMenuopen = true;
     }
     public void Resume()
     {
@@ -32,6 +33,7 @@ public class pausemenu : MonoBehaviour
         Cursor.visible = false;
         Time.timeScale = 1;
         keybindsettings.SaveAndBack();
+        pauseMenuopen = false;
     }
     public void quitgame()
     {
@@ -48,13 +50,11 @@ public class pausemenu : MonoBehaviour
         if (Input.GetKeyDown(KeyBinds.pause) && pauseMenuopen == false)
         {
             Pause();
-            pauseMenuopen = true;
         }
 
         else if (Input.GetKeyDown(KeyBinds.pause) && pauseMenuopen == true)
         {
             Resume();
-            pauseMenuopen = false;
         }
     }
 }

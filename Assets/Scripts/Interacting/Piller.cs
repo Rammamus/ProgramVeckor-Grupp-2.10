@@ -11,6 +11,7 @@ public class Piller : MonoBehaviour
     {
         pillAmount -= 1;
         print(pillAmount + " Remaining Pills");
+        FindObjectOfType<AudioManager>().PlaySFX(FindObjectOfType<AudioManager>().svaljaljud);
     }
 
     // Tar ett piller om man klickar på knappen och har piller kvar att ta -Filip

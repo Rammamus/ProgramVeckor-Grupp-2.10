@@ -14,15 +14,16 @@ public class DialogueManager : MonoBehaviour
     public GameObject spelare;
     public GameObject[] flicka;
     public Animator animator;
+
+    public AudioClip[] talkingSFX;
     void Start()
     {
         //Man skapar en array som håller sig till FIFO regeln
         sentences = new Queue<string>();
         //nameText = FindObjectOfType<TextMeshProUGUI>();
         //DialogueText = FindObjectOfType<TextMeshProUGUI>();
-        
     }
-    public void StartDialogue ( Dialogue dialogue)
+    public void StartDialogue ( Dialogue dialogue, AudioClip[] sounds)
     {
         //Sätter en panel aktiv och stänger av ett par scripts - erwin 
         animator.SetBool("Isopen", true);
@@ -37,7 +38,16 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("Startar konversation med " + dialogue.name);
         nameText.text = dialogue.name;
         sentences.Clear();
-        
+
+
+        //Chooses a random audioclip that will be the talking SFX - Adrian
+        talkingSFX = sounds;
+        int rng = Random.Range(0, talkingSFX.Length);
+        FindObjectOfType<AudioManager>().sFXsource.clip = talkingSFX[rng];
+        FindObjectOfType<AudioManager>().sFXsource.Play();
+        Debug.Log(rng);
+
+
         //skapar en foreach som går igenom varje mening
         foreach (string sentence in dialogue.sentences)
         {
@@ -54,6 +64,16 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
+
+
+        //Chooses a random audioclip that will be the talking SFX - Adrian
+        int rng = Random.Range(0, talkingSFX.Length);
+        FindObjectOfType<AudioManager>().sFXsource.clip = talkingSFX[rng];
+        FindObjectOfType<AudioManager>().sFXsource.Play();
+        Debug.Log(rng);
+
+
+
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));

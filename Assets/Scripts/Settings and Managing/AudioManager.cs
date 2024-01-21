@@ -5,8 +5,8 @@ public class AudioManager : MonoBehaviour
 {
     public Sanity sanity;
     [Header("----------AudioSource----------")]
-    [SerializeField] AudioSource musicsource;
-    [SerializeField] AudioSource SFXsource;
+    public AudioSource musicsource;
+    public AudioSource sFXsource;
 
     [Header("----------AudioSource----------")]
     public AudioClip background;
@@ -49,6 +49,11 @@ public class AudioManager : MonoBehaviour
         
     }
     
+    public void PlaySFX(AudioClip sound)
+    {
+        sFXsource.clip = sound;
+        sFXsource.Play();
+    }
 
     public void playMusic()
     {

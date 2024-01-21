@@ -17,18 +17,20 @@ public class Brightness : MonoBehaviour
     {
       
         brightness.TryGetSettings(out exposure);
-
-    }
-
-    public void AdjustBrightness(float value)
-    {
-        if (value !=0)
+        if (PlayerPrefs.HasKey("Brightness"))
         {
-            exposure.keyValue.value = value;
+            brightnessSlider.value = PlayerPrefs.GetFloat("Brightness");
         }
         else
         {
-            exposure.keyValue.value = .5f;         
+            brightnessSlider.value = 1;
         }
+    }
+
+    public void AdjustBrightness()
+    {
+        exposure.keyValue.value = brightnessSlider.value;
+        PlayerPrefs.SetFloat("Brightness", brightnessSlider.value);
+        PlayerPrefs.Save();
     }
 }

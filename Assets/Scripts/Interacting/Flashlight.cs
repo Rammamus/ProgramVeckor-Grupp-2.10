@@ -7,13 +7,10 @@ public class Flashlight : MonoBehaviour
     bool flashlightOn;
     [SerializeField] GameObject flashOn;
     [SerializeField] GameObject flashOff;
-    [SerializeField] AudioSource source;
-    [SerializeField] AudioClip click;
 
     void toggleFlashlight()
     {
-        source.clip = click;
-        source.Play();
+        FindObjectOfType<AudioManager>().PlaySFX(FindObjectOfType<AudioManager>().ficklampa);
         if (flashlightOn == true)
         {
             flashOn.SetActive(false);
