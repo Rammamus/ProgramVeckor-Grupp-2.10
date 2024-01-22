@@ -6,6 +6,7 @@ using UnityEngine;
 public class Tasks : MonoBehaviour
 {
     [SerializeField] TaskHandler taskHandler;
+    public string taskName;
     //[SerializeField] GameObject me;
     public bool interaction;
     public bool taskDone;

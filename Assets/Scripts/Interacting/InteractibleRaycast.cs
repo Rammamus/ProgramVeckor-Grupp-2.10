@@ -77,7 +77,7 @@ public class InteractibleRaycast : MonoBehaviour
             //Kollar om det träffade game objectet är en task - Adrian
             if (hit.transform.GetComponent<Tasks>())
             {
-                UpdateInteractText(true, "to clean");
+                UpdateInteractText(true, hit.transform.GetComponent<Tasks>().taskName);
                 hit.transform.GetComponent<Tasks>().interaction = true;
                 previousTask = hit.transform.GetComponent<Tasks>();
                 interractText.SetActive(true);
