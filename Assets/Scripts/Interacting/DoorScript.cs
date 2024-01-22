@@ -6,8 +6,8 @@ using UnityEngine;
 public class DoorScript : MonoBehaviour
 {
     bool doorOpen;
-    bool midAnimation;
     Animator animator;
+    public bool locked;
 
     void Start()
     {
@@ -23,17 +23,20 @@ public class DoorScript : MonoBehaviour
     //Toggle for the door, if it's open -> close the door. if it's closed -> open the door - Adrian
     public void DoorToggle()
     {
-        if (doorOpen)
+        if (!locked)
         {
-            doorOpen = false;
-            animator.Play("CloseDoor");
-            animator.Play("CloseHandle");
-        }
-        else if (!doorOpen)
-        {
-            doorOpen = true;
-            animator.Play("OpenDoor");
-            animator.Play("OpenHandle");
+            if (doorOpen)
+            {
+                doorOpen = false;
+                animator.Play("CloseDoor");
+                animator.Play("CloseHandle");
+            }
+            else if (!doorOpen)
+            {
+                doorOpen = true;
+                animator.Play("OpenDoor");
+                animator.Play("OpenHandle");
+            }
         }
     }
 }

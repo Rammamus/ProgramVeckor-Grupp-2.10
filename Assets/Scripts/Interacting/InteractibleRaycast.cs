@@ -10,7 +10,7 @@ public class InteractibleRaycast : MonoBehaviour
     Transform equippedItem;
     bool holdingSomething = false;
     [SerializeField] float raycastRange;
-    [SerializeField] GameObject interractText;
+    [SerializeField] public GameObject interractText;
     TextMeshProUGUI uiText;
     [SerializeField] public Sanity sanity;
     [SerializeField] public DialogueManager dialogue;
@@ -39,7 +39,7 @@ public class InteractibleRaycast : MonoBehaviour
             if (hit.transform.gameObject.CompareTag("Interactable") && !holdingSomething)
              {
                 interractText.SetActive(true);
-                UpdateInteractText("to pick up");
+                UpdateInteractText(true, "to pick up");
                 if (Input.GetKeyUp(KeyBinds.interact))
                 {
                     equippedItem = hit.transform;
@@ -52,7 +52,7 @@ public class InteractibleRaycast : MonoBehaviour
             if (hit.transform.GetComponent<Socialprat>() && dialogue.inconversation == false)
             {
                 interractText.SetActive(true);
-                UpdateInteractText("to talk");
+                UpdateInteractText(true, "to talk");
                 if (Input.GetKeyDown(KeyBinds.interact))
                 {
                     //Om spelarens sanity droppar under 25% så kommer man kunna ta bort objektet istället för att prata med det. - Erwin
@@ -77,6 +77,7 @@ public class InteractibleRaycast : MonoBehaviour
             //Kollar om det träffade game objectet är en task - Adrian
             if (hit.transform.GetComponent<Tasks>())
             {
+                UpdateInteractText(true, "to clean");
                 hit.transform.GetComponent<Tasks>().interaction = true;
                 previousTask = hit.transform.GetComponent<Tasks>();
                 interractText.SetActive(true);
@@ -86,10 +87,17 @@ public class InteractibleRaycast : MonoBehaviour
             if (hit.transform.GetComponent<DoorScript>())
             {
                 interractText.SetActive(true);
-                UpdateInteractText("to use door");
-                if (Input.GetKeyDown(KeyBinds.interact))
+                if (!hit.transform.GetComponent<DoorScript>().locked)
                 {
-                    hit.transform.GetComponent<DoorScript>().DoorToggle();
+                    UpdateInteractText(true, "to use door");
+                    if (Input.GetKeyDown(KeyBinds.interact))
+                    {
+                        hit.transform.GetComponent<DoorScript>().DoorToggle();
+                    }
+                }
+                else
+                {
+                    UpdateInteractText(false, "This door is locked");
                 }
             }
         }
@@ -115,9 +123,16 @@ public class InteractibleRaycast : MonoBehaviour
         }
     }
 
-    public void UpdateInteractText(string s)
+    public void UpdateInteractText(bool canInteract, string s)
     {
-        uiText.text = "'" + KeyBinds.interact.ToString() + "' " + s;
+        if (canInteract)
+        {
+            uiText.text = "'" + KeyBinds.interact.ToString() + "' " + s;
+        }
+        else
+        {
+            uiText.text = s;
+        }
     }
 }
     

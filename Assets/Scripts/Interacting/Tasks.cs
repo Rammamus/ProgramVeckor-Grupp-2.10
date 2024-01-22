@@ -40,5 +40,6 @@ public class Tasks : MonoBehaviour
         taskHandler.tasksCompleted++;
         taskHandler.UpdateTask();
         interaction = false;
+        FindObjectOfType<InteractibleRaycast>().interractText.SetActive(false);
     }
 }
