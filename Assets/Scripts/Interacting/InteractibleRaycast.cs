@@ -117,7 +117,7 @@ public class InteractibleRaycast : MonoBehaviour
             if (Input.GetKeyDown(KeyBinds.interact))
             {
                 interractText.SetActive(false);
-                gameObject.transform.DetachChildren();
+                gameObject.transform.DetachChildren(); //TODO - Make this only detach the object that is being held - Adrian
                 holdingSomething = false;
             }
         }
