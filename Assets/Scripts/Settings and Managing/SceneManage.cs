@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 //This script manages the scene/day that you are in - Adrian
 public class SceneManage : MonoBehaviour
@@ -16,12 +17,17 @@ public class SceneManage : MonoBehaviour
     private bool bytaArray = false;
     public Sanity sanity;
     public bool fullyPassed;
+    public TextMeshProUGUI clock;
 
+    int minutes;
+    public int hours;
+    float seconds;
     void Start()
     {
         scene = SceneManager.GetActiveScene().buildIndex;
         SaveSystem.SaveScene(this);
         StartCoroutine(Spawnobject());
+        UpdateClock();
     }
 
     private void Update()
@@ -29,8 +35,20 @@ public class SceneManage : MonoBehaviour
         //Simple countdown for the day if it's a school scene - Adrian
         if (isSchoolScene)
         {
-            dayLength -= Time.deltaTime;
-            if (dayLength <= 0)
+            seconds += Time.deltaTime;
+            if (seconds > 2)
+            {
+                minutes++;
+                seconds = 0;
+                UpdateClock();
+            }
+            if (minutes >= 60)
+            {
+                hours++;
+                minutes = 0;
+                UpdateClock();
+            }
+            if (hours >= 23)
             {
                 EndDay();
             }
@@ -39,7 +57,7 @@ public class SceneManage : MonoBehaviour
     IEnumerator Spawnobject()
     {
         int i = 0;
-        while (dayLength > 0 && i < 1000 )
+        while (hours < 23 && i < 1000 )
         {
             GameObject[] Spawnobject = bytaArray ? soldater : skolpojkar;
             foreach (GameObject obj in skolpojkar)
@@ -84,5 +102,17 @@ public class SceneManage : MonoBehaviour
         SaveData data = SaveSystem.LoadScene();
         scene = data.scene;
         SceneManager.LoadScene(scene);
+    }
+
+    public void UpdateClock()
+    {
+        if (minutes < 10)
+        {
+            clock.text = hours + ":0" + minutes;
+        }
+        else
+        {
+            clock.text = hours + ":" + minutes;
+        }
     }
 }
