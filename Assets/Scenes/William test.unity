@@ -580,7 +580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brightnessSlider: {fileID: 4847504841799057671}
-  brightness: {fileID: 11400000, guid: 2803bf010b539a441a3a913accaa0f53, type: 2}
+  brightness: {fileID: 11400000, guid: b52db131a319dee4d898caae0abb6735, type: 2}
   layer: {fileID: 1009948452}
 --- !u!114 &193505163
 MonoBehaviour:
@@ -594,10 +594,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 2803bf010b539a441a3a913accaa0f53, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 7e26b3125e888d74b8886b9cf24ca5b0, type: 2}
   isGlobal: 1
   blendDistance: 0
-  weight: 1
+  weight: 0
   priority: 0
 --- !u!4 &193505164
 Transform:
@@ -2275,9 +2275,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4028189ba6e72247b5ca4c86378af61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sanity: {fileID: 0}
   musicsource: {fileID: 2064890133}
-  SFXsource: {fileID: 975207117}
+  sFXsource: {fileID: 0}
   background: {fileID: 8300000, guid: 9bec3c4d371df7540824b522c962b249, type: 3}
+  knapptryck: {fileID: 0}
+  ficklampa: {fileID: 0}
+  anndasstarkt: {fileID: 0}
+  anndasstraktlight: {fileID: 0}
+  hummfixljud: {fileID: 0}
+  logsamflickadod: {fileID: 0}
+  litenflickagrubel1: {fileID: 0}
+  litenflickagrubbel2: {fileID: 0}
+  magnusgrubbel1: {fileID: 0}
+  magnusgrubbel2: {fileID: 0}
+  melvingrubbel1: {fileID: 0}
+  melvingrubbel2: {fileID: 0}
+  snabbflickadod: {fileID: 0}
+  svaljaljud: {fileID: 0}
+  tonorsgrubbel1: {fileID: 0}
+  tonorsgrubbel2: {fileID: 0}
+  uhmacuttuygrubbel1: {fileID: 0}
+  uhmacuttlygrubbel2: {fileID: 0}
 --- !u!4 &1710342098
 Transform:
   m_ObjectHideFlags: 0
@@ -2809,15 +2828,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 964382245981274383, guid: b5d52f11a798bac44aedcb3e32575bc7, type: 3}
       propertyPath: m_Value
-      value: 1.12
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 964382245981274383, guid: b5d52f11a798bac44aedcb3e32575bc7, type: 3}
       propertyPath: m_MaxValue
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 964382245981274383, guid: b5d52f11a798bac44aedcb3e32575bc7, type: 3}
       propertyPath: m_MinValue
-      value: 0.1
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 964382245981274383, guid: b5d52f11a798bac44aedcb3e32575bc7, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 964382245981274383, guid: b5d52f11a798bac44aedcb3e32575bc7, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3125,7 +3148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5632954624888839729, guid: b5d52f11a798bac44aedcb3e32575bc7, type: 3}
       propertyPath: m_Value
-      value: 0.0001
+      value: 1.91
       objectReference: {fileID: 0}
     - target: {fileID: 5632954624888839729, guid: b5d52f11a798bac44aedcb3e32575bc7, type: 3}
       propertyPath: m_MaxValue
