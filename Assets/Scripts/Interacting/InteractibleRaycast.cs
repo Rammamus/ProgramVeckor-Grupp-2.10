@@ -17,6 +17,7 @@ public class InteractibleRaycast : MonoBehaviour
     [SerializeField] public Killcount killcount;
 
     GameObject heldItem;
+    float dropTimer;
 
     Tasks previousTask;
 
@@ -31,6 +32,10 @@ public class InteractibleRaycast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (dropTimer > 0)
+        {
+            dropTimer -= Time.deltaTime;
+        }
         //Sätter Vektorn fwd till framåt från kameran -Filip
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
 
@@ -42,8 +47,9 @@ public class InteractibleRaycast : MonoBehaviour
              {
                 interractText.SetActive(true);
                 UpdateInteractText(true, "to pick up");
-                if (Input.GetKeyUp(KeyBinds.interact))
+                if (Input.GetKeyDown(KeyBinds.interact) && dropTimer <= 0)
                 {
+                    dropTimer = 0.5f;
                     heldItem = hit.transform.gameObject;
                     equippedItem = hit.transform;
                     hit.transform.parent = gameObject.transform;
@@ -80,7 +86,7 @@ public class InteractibleRaycast : MonoBehaviour
             //Kollar om det träffade game objectet är en task - Adrian
             if (hit.transform.GetComponent<Tasks>())
             {
-                if (heldItem == hit.transform.GetComponent<Tasks>().tool)
+                if (holdingSomething && heldItem == hit.transform.GetComponent<Tasks>().tool)
                 {
                     UpdateInteractText(true, hit.transform.GetComponent<Tasks>().taskName);
                     hit.transform.GetComponent<Tasks>().interaction = true;
@@ -125,11 +131,12 @@ public class InteractibleRaycast : MonoBehaviour
         if (holdingSomething == true)
         {
             interractText.SetActive(false);
-            if (Input.GetKeyDown(KeyBinds.interact))
+            if (Input.GetKeyDown(KeyBinds.interact) && dropTimer <= 0)
             {
                 interractText.SetActive(false);
                 gameObject.transform.DetachChildren(); //TODO - Make this only detach the object that is being held - Adrian
                 holdingSomething = false;
+                 dropTimer = 0.5f;
             }
         }
     }
