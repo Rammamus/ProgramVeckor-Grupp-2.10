@@ -16000,6 +16000,7 @@ MonoBehaviour:
     sentences:
     - This is the last photo I got of us.
     - It sure was a beautiful one...
+  talkSFX: []
 --- !u!65 &826493045
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17662,6 +17663,7 @@ MonoBehaviour:
     sentences:
     - Ahhh, this reminds me of old nam'.
     - It used to be so beautiful back then...
+  talkSFX: []
 --- !u!65 &938700843
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31403,6 +31405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: 0
+  isSchoolScene: 0
   dayLength: 1e+9
   skolpojkar: []
   soldater: []
