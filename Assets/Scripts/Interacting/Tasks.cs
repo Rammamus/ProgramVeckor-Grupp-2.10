@@ -10,6 +10,8 @@ public class Tasks : MonoBehaviour
     //[SerializeField] GameObject me;
     public bool interaction;
     public bool taskDone;
+
+    public GameObject tool;
     void Update()
     {
         if (interaction)
