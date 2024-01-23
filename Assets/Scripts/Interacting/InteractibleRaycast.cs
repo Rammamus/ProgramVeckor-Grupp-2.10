@@ -16,6 +16,8 @@ public class InteractibleRaycast : MonoBehaviour
     [SerializeField] public DialogueManager dialogue;
     [SerializeField] public Killcount killcount;
 
+    GameObject heldItem;
+
     Tasks previousTask;
 
     // Start is called before the first frame update
@@ -42,6 +44,7 @@ public class InteractibleRaycast : MonoBehaviour
                 UpdateInteractText(true, "to pick up");
                 if (Input.GetKeyUp(KeyBinds.interact))
                 {
+                    heldItem = hit.transform.gameObject;
                     equippedItem = hit.transform;
                     hit.transform.parent = gameObject.transform;
                     holdingSomething = true;
@@ -77,8 +80,16 @@ public class InteractibleRaycast : MonoBehaviour
             //Kollar om det träffade game objectet är en task - Adrian
             if (hit.transform.GetComponent<Tasks>())
             {
-                UpdateInteractText(true, hit.transform.GetComponent<Tasks>().taskName);
-                hit.transform.GetComponent<Tasks>().interaction = true;
+                if (heldItem == hit.transform.GetComponent<Tasks>().tool)
+                {
+                    UpdateInteractText(true, hit.transform.GetComponent<Tasks>().taskName);
+                    hit.transform.GetComponent<Tasks>().interaction = true;
+                }
+                else
+                {
+                    UpdateInteractText(false, "I need my tools");
+                }
+               
                 previousTask = hit.transform.GetComponent<Tasks>();
                 interractText.SetActive(true);
             }
