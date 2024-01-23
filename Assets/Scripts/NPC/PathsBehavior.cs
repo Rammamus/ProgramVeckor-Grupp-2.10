@@ -18,12 +18,14 @@ public class PathsBehavior : MonoBehaviour
     public float cooldown = 0f;
     public Transform targetPoint;  
     public float movementSpeed = 5f;
-    public float stoppingDistance = 0.1f;
+    public float stoppingDistance = 0.1f; 
+    public Transform originPoint;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         //få fram rigidbodyn som är npcn - Erwin
         origRotation = transform.rotation;
+        Vector3 initialPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -98,7 +100,8 @@ public class PathsBehavior : MonoBehaviour
     void Disappear()
     {
         //Destroy(gameObject);
-        this.gameObject.SetActive(false);
+        transform.position = originPoint.position;
+        //this.gameObject.SetActive(false);
     }
  
     private void OnTriggerEnter(Collider other)
