@@ -19,7 +19,7 @@ public class CleaningTask : Tasks
     public override void DoTask()
     {
         base.DoTask();
-        if (Input.GetKey(KeyBinds.interact))
+        if (Input.GetKey(KeyBinds.useItem))
         {
             cleaningProgress += Time.deltaTime;
             slider.SetActive(true);
@@ -30,7 +30,7 @@ public class CleaningTask : Tasks
             taskDone = true;
             slider.SetActive(false);
         }
-        if (Input.GetKeyUp(KeyBinds.interact))
+        if (Input.GetKeyUp(KeyBinds.useItem))
         {
             StopTask();
         }
