@@ -47,6 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pausepanel: {fileID: 4697048677401007378}
   keybindsettings: {fileID: 0}
+  source: {fileID: 0}
+  sfx: {fileID: 0}
 --- !u!1001 &4115251464396910397
 PrefabInstance:
   m_ObjectHideFlags: 0

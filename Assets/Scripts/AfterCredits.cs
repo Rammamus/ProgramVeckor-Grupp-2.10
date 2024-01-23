@@ -18,7 +18,7 @@ public class AfterCredits : MonoBehaviour
     {
         timer += Time.deltaTime;
         text.transform.position += new Vector3(0, 30, 0) * Time.deltaTime;
-        if (timer > 30)
+        if (timer > 50)
         {
             SceneManager.LoadScene(0);
         }
