@@ -63,7 +63,7 @@ public class SceneManage : MonoBehaviour
             foreach (GameObject obj in skolpojkar)
             {
                 obj.SetActive(true);
-                yield return new WaitForSeconds(20);
+                yield return new();
             }
             i++;
         }
