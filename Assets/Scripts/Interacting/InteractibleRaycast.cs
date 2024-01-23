@@ -86,9 +86,10 @@ public class InteractibleRaycast : MonoBehaviour
             //Kollar om det träffade game objectet är en task - Adrian
             if (hit.transform.GetComponent<Tasks>())
             {
+                interractText.SetActive(true);
                 if (holdingSomething && heldItem == hit.transform.GetComponent<Tasks>().tool)
                 {
-                    UpdateInteractText(true, hit.transform.GetComponent<Tasks>().taskName);
+                    UpdateInteractText(false, "'" + KeyBinds.useItem +"' " + hit.transform.GetComponent<Tasks>().taskName);
                     hit.transform.GetComponent<Tasks>().interaction = true;
                 }
                 else
@@ -97,7 +98,6 @@ public class InteractibleRaycast : MonoBehaviour
                 }
                
                 previousTask = hit.transform.GetComponent<Tasks>();
-                interractText.SetActive(true);
             }
 
             //Kollar om det träffade game objectet är en dörr - Adrian
