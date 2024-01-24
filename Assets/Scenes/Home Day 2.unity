@@ -23381,6 +23381,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7134198698225284503, guid: af7a448308d0f974b930443bc08b40bd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421197784610205614, guid: af7a448308d0f974b930443bc08b40bd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7456229234642676457, guid: af7a448308d0f974b930443bc08b40bd, type: 3}
       propertyPath: buttons.Array.size
       value: 8
@@ -23397,6 +23405,10 @@ PrefabInstance:
       propertyPath: profile
       value: 
       objectReference: {fileID: 11400000, guid: 5b8d1dba55fa6e64c970e5775af5e9fc, type: 2}
+    - target: {fileID: 7852056371885422396, guid: af7a448308d0f974b930443bc08b40bd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8691049333978094279, guid: af7a448308d0f974b930443bc08b40bd, type: 3}
       propertyPath: buttons.Array.size
       value: 8
@@ -23488,7 +23500,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1207903192}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80fa261f9706115449d8cbabb0a28c3c, type: 3}
   m_Name: 
@@ -31425,6 +31437,8 @@ MonoBehaviour:
   soldater: []
   sanity: {fileID: 0}
   fullyPassed: 0
+  clock: {fileID: 0}
+  hours: 0
 --- !u!4 &1580642882
 Transform:
   m_ObjectHideFlags: 0
