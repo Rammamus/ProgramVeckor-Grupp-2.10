@@ -21,8 +21,6 @@ public class TaskList : MonoBehaviour
         if (completed == list.Length)
         {
             passedTheLevel = true;
-            Debug.Log("passed");
         }
-        Debug.Log("UpdateTaskBig   " + completed + "/" + list.Length);
     }
 }
