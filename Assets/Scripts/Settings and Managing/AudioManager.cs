@@ -37,7 +37,7 @@ public class AudioManager : MonoBehaviour
     public void Update()
     {
         if(sanity.insanePercentage >= 0.5 && !musicsource.isPlaying)
-        {
+        {   
             
             musicsource.Play();
         } else if (sanity.insanePercentage < 0.5f)
