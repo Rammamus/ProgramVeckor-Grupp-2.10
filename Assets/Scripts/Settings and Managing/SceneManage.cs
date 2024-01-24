@@ -14,7 +14,7 @@ public class SceneManage : MonoBehaviour
     [SerializeField] float dayLength;
     public GameObject[] skolpojkar;
     public GameObject[] soldater;
-    private bool bytaArray = false;
+    public bool bytaArray = false;
     public Sanity sanity;
     public bool fullyPassed;
     public TextMeshProUGUI clock;
