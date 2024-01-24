@@ -42,11 +42,11 @@ public class Sanity : MonoBehaviour
         }
         ChangeSanity(Time.deltaTime * 10);
 
-        if (insanePercentage >= 0.5)
+        /*if (insanePercentage >= 0.5)
         {
             print("testc");
             audioManager.GetComponent<AudioManager>().playMusic();
-        }
+        }*/
     }
 
     //A function for changing insanity by 'x' amount (positive number to gain, negative to lose) - Adrian
