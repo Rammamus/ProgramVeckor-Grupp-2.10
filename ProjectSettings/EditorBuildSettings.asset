@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/William test.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 5b2ec14a074531244bfd5c05bec048fa
   - enabled: 1
     path: Assets/Scenes/Home Day 1.unity

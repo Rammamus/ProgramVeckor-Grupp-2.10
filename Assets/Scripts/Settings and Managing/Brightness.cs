@@ -20,16 +20,18 @@ public class Brightness : MonoBehaviour
         if (PlayerPrefs.HasKey("Brightness"))
         {
             brightnessSlider.value = PlayerPrefs.GetFloat("Brightness");
+            Debug.Log("got brightness");
         }
         else
         {
-            brightnessSlider.value = 1;
+            brightnessSlider.value = 2;
         }
     }
 
     public void AdjustBrightness()
     {
         exposure.keyValue.value = brightnessSlider.value;
+        Debug.Log("is it even happening bro: " + exposure.keyValue.value + "    " + brightnessSlider.value); ;
         PlayerPrefs.SetFloat("Brightness", brightnessSlider.value);
         PlayerPrefs.Save();
     }
