@@ -8,6 +8,7 @@ public class Flashlight : MonoBehaviour
     [SerializeField] GameObject flashOn;
     [SerializeField] GameObject flashOff;
 
+    //Sätter på ficklampan om den är av och stänger av den om den är på
     void toggleFlashlight()
     {
         FindObjectOfType<AudioManager>().PlaySFX(FindObjectOfType<AudioManager>().ficklampa);
