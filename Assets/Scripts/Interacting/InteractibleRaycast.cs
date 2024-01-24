@@ -130,7 +130,7 @@ public class InteractibleRaycast : MonoBehaviour
         //Släpper objektet man håller i handen om man trycker på interact knappen
         if (holdingSomething == true)
         {
-            interractText.SetActive(false);
+            //interractText.SetActive(false);
             if (Input.GetKeyDown(KeyBinds.interact) && dropTimer <= 0)
             {
                 interractText.SetActive(false);
