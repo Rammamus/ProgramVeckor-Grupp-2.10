@@ -23057,6 +23057,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 254
       objectReference: {fileID: 0}
+    - target: {fileID: 387387410383362696, guid: af7a448308d0f974b930443bc08b40bd, type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: b52db131a319dee4d898caae0abb6735, type: 2}
     - target: {fileID: 587766558815703052, guid: af7a448308d0f974b930443bc08b40bd, type: 3}
       propertyPath: flicka.Array.size
       value: 0
@@ -23413,6 +23417,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6730078176222754497, guid: af7a448308d0f974b930443bc08b40bd, type: 3}
+      propertyPath: brightness
+      value: 
+      objectReference: {fileID: 11400000, guid: b52db131a319dee4d898caae0abb6735, type: 2}
     - target: {fileID: 6857383250062591035, guid: af7a448308d0f974b930443bc08b40bd, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.071981445
@@ -31490,6 +31498,7 @@ MonoBehaviour:
   dayLength: 1e+9
   skolpojkar: []
   soldater: []
+  bytaArray: 0
   sanity: {fileID: 0}
   fullyPassed: 0
   clock: {fileID: 0}
