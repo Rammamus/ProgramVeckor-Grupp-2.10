@@ -209,6 +209,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7826242322888744046, guid: b5d52f11a798bac44aedcb3e32575bc7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8661279176738486831, guid: b5d52f11a798bac44aedcb3e32575bc7, type: 3}
       propertyPath: m_Name
       value: optionspanel
