@@ -40,7 +40,7 @@ public class Sanity : MonoBehaviour
         {
             vignette.intensity.value = insanePercentage;
         }
-        ChangeSanity(Time.deltaTime * 10);
+        ChangeSanity(Time.deltaTime * 3);
 
         /*if (insanePercentage >= 0.5)
         {
