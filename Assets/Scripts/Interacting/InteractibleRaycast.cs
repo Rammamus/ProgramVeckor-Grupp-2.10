@@ -134,9 +134,10 @@ public class InteractibleRaycast : MonoBehaviour
             if (Input.GetKeyDown(KeyBinds.interact) && dropTimer <= 0)
             {
                 interractText.SetActive(false);
-                gameObject.transform.DetachChildren(); //TODO - Make this only detach the object that is being held - Adrian
+                //gameObject.transform.DetachChildren(); //TODO - Make this only detach the object that is being held - Adrian
+                heldItem.GetComponent<Verktyg>().GetDropped();
                 holdingSomething = false;
-                 dropTimer = 0.5f;
+                dropTimer = 0.5f;
             }
         }
     }

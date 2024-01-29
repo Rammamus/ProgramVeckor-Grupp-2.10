@@ -7,7 +7,7 @@ public class Verktyg : Interactables
 
     private Rigidbody rb;
     private Collider coll;
-   
+    [SerializeField] Transform hand;
 
     // Start is called before the first frame update
     void Start()
@@ -27,16 +27,24 @@ public class Verktyg : Interactables
             rb.constraints = RigidbodyConstraints.FreezePosition;
             rb.constraints = RigidbodyConstraints.FreezeRotation;
             coll.enabled = false;
-            gameObject.transform.localPosition = new Vector3(0.2f,-0.1f,1);
-            transform.localRotation = Quaternion.identity;
+            gameObject.transform.position = hand.transform.position;
+            transform.rotation = hand.transform.rotation;
         }
-        
+        /*
         else
         {
             rb.useGravity = true;
             rb.constraints = RigidbodyConstraints.None;
             coll.enabled = true;
         }
-        
+        */
+    }
+
+    public void GetDropped()
+    {
+        rb.useGravity = true;
+        rb.constraints = RigidbodyConstraints.None;
+        coll.enabled = true;
+        transform.parent = null;
     }
 }

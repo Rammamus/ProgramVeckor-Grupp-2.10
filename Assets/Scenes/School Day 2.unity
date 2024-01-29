@@ -7115,6 +7115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecf4e58bf9e57d49b61aacc5593d14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hand: {fileID: 2044057916}
+  camera: {fileID: 1553184246}
 --- !u!4 &165819681 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 458460514717670440, guid: 1f75837a5eecbcc4aa4202fdb3c771fd, type: 3}
@@ -11888,6 +11890,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piller (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4947595133463039940, guid: 06e0c64a18494cc4d8a0e988c682ce03, type: 3}
+      propertyPath: hand
+      value: 
+      objectReference: {fileID: 2044057916}
+    - target: {fileID: 4947595133463039940, guid: 06e0c64a18494cc4d8a0e988c682ce03, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 1553184246}
     - target: {fileID: 4947595133463039940, guid: 06e0c64a18494cc4d8a0e988c682ce03, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -61083,6 +61093,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.020000009, y: 0.020000016, z: 0.020000007}
   m_Center: {x: 0, y: -0.000000029802322, z: 0}
+--- !u!4 &1553184246 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6227278257913884199, guid: af7a448308d0f974b930443bc08b40bd, type: 3}
+  m_PrefabInstance: {fileID: 1426908313}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1553190606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69821,6 +69836,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1636274214848672252, guid: 04ab785d811b25b4d989e52ea8af1c41, type: 3}
+      propertyPath: hand
+      value: 
+      objectReference: {fileID: 2044057916}
+    - target: {fileID: 1636274214848672252, guid: 04ab785d811b25b4d989e52ea8af1c41, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 1553184246}
+    - target: {fileID: 1636274214848672252, guid: 04ab785d811b25b4d989e52ea8af1c41, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -72476,6 +72499,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecf4e58bf9e57d49b61aacc5593d14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hand: {fileID: 2044057916}
+  camera: {fileID: 1553184246}
 --- !u!1001 &1889265898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77912,6 +77937,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f53e5368c05655b4abb664f7f58d2ea1, type: 3}
+--- !u!4 &2044057916 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5979252907070733186, guid: af7a448308d0f974b930443bc08b40bd, type: 3}
+  m_PrefabInstance: {fileID: 1426908313}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2048135201 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2394100965134100599, guid: 1fff448f18538a14a92f196b4558a019, type: 3}
