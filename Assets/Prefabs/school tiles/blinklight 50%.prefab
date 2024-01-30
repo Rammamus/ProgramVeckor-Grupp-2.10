@@ -43,7 +43,7 @@ Light:
   m_GameObject: {fileID: 166768469094647242}
   m_Enabled: 1
   serializedVersion: 10
-  m_Type: 2
+  m_Type: 3
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
@@ -87,7 +87,7 @@ Light:
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
+  m_AreaSize: {x: 0.4712925, y: 2}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
@@ -161,6 +161,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 31ac23931fc7a9049aca83d30219f940, type: 3}
       propertyPath: m_Name
       value: lamp_school (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 31ac23931fc7a9049aca83d30219f940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
