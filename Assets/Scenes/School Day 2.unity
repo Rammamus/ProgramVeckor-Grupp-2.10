@@ -7116,7 +7116,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hand: {fileID: 2044057916}
-  camera: {fileID: 1553184246}
+  customRotationX: -90
+  customRotationY: 0
+  customRotationZ: 0
 --- !u!4 &165819681 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 458460514717670440, guid: 1f75837a5eecbcc4aa4202fdb3c771fd, type: 3}
@@ -11967,7 +11969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7387eef4ebde1494480d9bf1f3c3f855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pillAmount: 2
+  pillAmount: 20
 --- !u!1001 &268915995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72500,7 +72502,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hand: {fileID: 2044057916}
-  camera: {fileID: 1553184246}
+  customRotationX: 0
+  customRotationY: 0
+  customRotationZ: 0
 --- !u!1001 &1889265898
 PrefabInstance:
   m_ObjectHideFlags: 0

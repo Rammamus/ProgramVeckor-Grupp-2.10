@@ -8,6 +8,7 @@ public class Verktyg : Interactables
     private Rigidbody rb;
     private Collider coll;
     [SerializeField] Transform hand;
+    [SerializeField] float customRotationX, customRotationY, customRotationZ;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,7 @@ public class Verktyg : Interactables
             rb.constraints = RigidbodyConstraints.FreezeRotation;
             coll.enabled = false;
             gameObject.transform.position = hand.transform.position;
-            transform.rotation = hand.transform.rotation;
+            transform.rotation = hand.transform.rotation * Quaternion.Euler(customRotationX, customRotationY, customRotationZ);
         }
         /*
         else
