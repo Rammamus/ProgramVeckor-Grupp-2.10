@@ -70,9 +70,13 @@ public class InteractibleRaycast : MonoBehaviour
                         killcount.killcount += 1;
                         Destroy(hit.transform.gameObject);
                     }
-                    else
+                    else if (killcount.killcount < 3)
                     {
                         hit.transform.GetComponent<Socialprat>().Triggerdialogue();
+                    }
+                    else if (killcount.killcount >= 3)
+                    {
+                        hit.transform.GetComponent<Socialpratrektor>().TriggerREALdialogue();
                     }
 
                     //If you talk to the principal while having completed all tasks you fully pass - Adrian
