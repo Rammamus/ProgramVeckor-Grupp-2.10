@@ -10,8 +10,8 @@ public class Piller : MonoBehaviour
     void takePill()
     {
         pillAmount -= 1;
-        print(pillAmount + " Remaining Pills");
         FindObjectOfType<AudioManager>().PlaySFX(FindObjectOfType<AudioManager>().svaljaljud);
+        FindObjectOfType<Sanity>().ChangeSanity(-250);
     }
 
     // Tar ett piller om man klickar på knappen och har piller kvar att ta -Filip
@@ -22,7 +22,6 @@ public class Piller : MonoBehaviour
             if (Input.GetKeyDown(KeyBinds.useItem) && pillAmount > 0)
             {
                 takePill();
-                FindObjectOfType<Sanity>().ChangeSanity(-250);
             }
             else if (Input.GetKeyDown(KeyBinds.useItem) && pillAmount <= 0)
             {
