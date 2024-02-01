@@ -5,7 +5,7 @@ using UnityEngine;
 //The top of the heritage for tasks - Adrian
 public class Tasks : MonoBehaviour
 {
-    [SerializeField] TaskHandler taskHandler;
+    public TaskHandler taskHandler;
     public string taskName;
     //[SerializeField] GameObject me;
     public bool interaction;
