@@ -20,5 +20,6 @@ public class WrenchingTask : CleaningTask
         taskHandler.UpdateTask();
         interaction = false;
         FindObjectOfType<InteractibleRaycast>().interractText.SetActive(false);
+        GetComponent<WrenchingTask>().enabled = false;
     }
 }

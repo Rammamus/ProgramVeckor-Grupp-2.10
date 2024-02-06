@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5249814571743686927, guid: eca5ce237382fe64daf5051b098fc582, type: 3}
       propertyPath: m_Name
-      value: Wrenching Task Variant
+      value: Wrenching Task
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 940940836078766685, guid: eca5ce237382fe64daf5051b098fc582, type: 3}
@@ -72,14 +72,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2936055815995247656, guid: eca5ce237382fe64daf5051b098fc582, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7575275724169819038}
+      addedObject: {fileID: 2793295117267030637}
   m_SourcePrefab: {fileID: 100100000, guid: eca5ce237382fe64daf5051b098fc582, type: 3}
 --- !u!1 &4655920380600918641 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2936055815995247656, guid: eca5ce237382fe64daf5051b098fc582, type: 3}
   m_PrefabInstance: {fileID: 7504072157507743321}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7575275724169819038
+--- !u!114 &2793295117267030637
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,22 +88,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4655920380600918641}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49b031a5c6106cf4cae0b4d6c511763e, type: 3}
+  m_Script: {fileID: 11500000, guid: a92900bee4c42ec4bb787504a79da4c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskHandler: {fileID: 7242993113775037193}
-  taskName: to fix radiator
+  taskHandler: {fileID: 0}
+  taskName: 
   interaction: 0
   taskDone: 0
   tool: {fileID: 0}
---- !u!114 &7242993113775037193 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 911862388591736144, guid: eca5ce237382fe64daf5051b098fc582, type: 3}
-  m_PrefabInstance: {fileID: 7504072157507743321}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b67cc117f0ad8cf43ada241ee2793fcf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  cleaningTime: 0
+  slider: {fileID: 0}
