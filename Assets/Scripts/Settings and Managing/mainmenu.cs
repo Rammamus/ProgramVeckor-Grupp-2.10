@@ -19,19 +19,20 @@ public class mainmenu : MonoBehaviour
     public void LoadGame()
     {
         SaveData data = SaveSystem.LoadScene(); //loads the *supposed saved data* - Adrian
+
         SceneManager.LoadScene(data.scene);
     }
 
     public void NewGame()
     {
+        // Load the first scene (presumably the start of a new game)..-william
         SceneManager.LoadScene(1);
     }
 
     public void quitgame()
     {
+        // Quit the application when called.-william
         Application.Quit();
     }
+
 }
-
-
-
